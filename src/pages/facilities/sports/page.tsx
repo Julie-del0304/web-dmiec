@@ -1,0 +1,143 @@
+
+import { useEffect } from 'react';
+import Navbar from '../../home/components/Navbar';
+import Footer from '../../home/components/Footer';
+import { useState } from 'react';
+
+export default function SportsPage() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const sports = [
+    { name: 'Cricket', icon: 'ri-baseball-line', desc: 'Full-size cricket ground with practice nets and coaching facilities.' },
+    { name: 'Football', icon: 'ri-football-line', desc: 'FIFA-standard football ground with floodlights for evening matches.' },
+    { name: 'Basketball', icon: 'ri-basketball-line', desc: 'Two indoor basketball courts with professional flooring.' },
+    { name: 'Volleyball', icon: 'ri-volleyball-line', desc: 'Outdoor and indoor volleyball courts for tournaments and practice.' },
+    { name: 'Badminton', icon: 'ri-ping-pong-line', desc: 'Four synthetic badminton courts with proper lighting.' },
+    { name: 'Table Tennis', icon: 'ri-ping-pong-line', desc: 'Six TT tables in a dedicated indoor hall.' },
+    { name: 'Chess', icon: 'ri-gamepad-line', desc: 'Chess club with FIDE-rated boards and coaching sessions.' },
+    { name: 'Athletics', icon: 'ri-run-line', desc: '400m synthetic athletics track with long jump and shot put areas.' },
+  ];
+
+  const achievements = [
+    { year: '2024', event: 'Anna University Zone Sports Meet', result: 'Overall Champions', sport: 'Cricket' },
+    { year: '2024', event: 'Inter-College Badminton Tournament', result: '1st Place', sport: 'Badminton' },
+    { year: '2023', event: 'State Level Football Championship', result: 'Runners-up', sport: 'Football' },
+    { year: '2023', event: 'District Athletics Meet', result: '3 Gold Medals', sport: 'Athletics' },
+    { year: '2022', event: 'Inter-University Basketball', result: 'Semi-Finalists', sport: 'Basketball' },
+    { year: '2022', event: 'Tamil Nadu Chess Championship', result: '2nd Place', sport: 'Chess' },
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Navbar scrolled={scrolled} />
+      <div className="pt-24">
+        {/* Hero */}
+        <div className="relative h-72 overflow-hidden">
+          <img
+            src="https://readdy.ai/api/search-image?query=college%20sports%20complex%20with%20cricket%20ground%20football%20field%20basketball%20courts%20lush%20green%20grass%20modern%20facilities%20sunny%20day%20aerial%20view%20professional%20sports%20infrastructure%20India&width=1400&height=400&seq=sports-hero-1&orientation=landscape"
+            alt="Sports Facilities"
+            className="w-full h-full object-cover object-top"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/70 to-slate-900/30 flex items-center px-8 lg:px-20">
+            <div>
+              <nav className="text-sm text-slate-300 mb-2">
+                <span>Home</span> <span className="mx-2">/</span> <span>Facilities</span> <span className="mx-2">/</span>
+                <span className="text-white font-medium">Sports</span>
+              </nav>
+              <h1 className="text-4xl font-bold text-white">Sports Facilities</h1>
+              <p className="text-slate-200 mt-2 text-lg">Nurturing Champions — On Field & Off Field</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+          {/* Overview */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-16 items-center">
+            <div>
+              <span className="text-sky-600 font-semibold text-sm uppercase tracking-wider">World-Class Infrastructure</span>
+              <h2 className="text-3xl font-bold text-slate-800 mt-2 mb-4">Sports & Physical Education</h2>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                DMI Engineering College believes in the holistic development of students. Our sprawling sports complex spans over 10 acres and provides state-of-the-art facilities for a wide range of indoor and outdoor sports.
+              </p>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                With dedicated coaches, modern equipment, and a culture of sportsmanship, our students have consistently excelled at university, state, and national levels. Physical education is an integral part of the curriculum.
+              </p>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { value: '10+', label: 'Acres of Sports Area' },
+                  { value: '15+', label: 'Sports Disciplines' },
+                  { value: '50+', label: 'Trophies Won' },
+                ].map(({ value, label }) => (
+                  <div key={label} className="bg-sky-50 rounded-lg p-4 text-center">
+                    <p className="text-2xl font-bold text-sky-600">{value}</p>
+                    <p className="text-xs text-slate-600 mt-1">{label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img
+                src="https://readdy.ai/api/search-image?query=students%20playing%20cricket%20on%20college%20ground%20green%20pitch%20sunny%20afternoon%20engineering%20college%20India%20sports%20day%20cheerful%20atmosphere%20team%20sport&width=600&height=400&seq=sports-overview-2&orientation=landscape"
+                alt="Students playing sports"
+                className="w-full h-72 object-cover object-top"
+              />
+            </div>
+          </div>
+
+          {/* Sports Grid */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-slate-800 mb-8 text-center">Available Sports & Games</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {sports.map((sport) => (
+                <div key={sport.name} className="bg-white border border-slate-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 flex items-center justify-center bg-sky-100 rounded-lg mb-4">
+                    <i className={`${sport.icon} text-2xl text-sky-600`}></i>
+                  </div>
+                  <h3 className="font-bold text-slate-800 mb-2">{sport.name}</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">{sport.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Achievements */}
+          <div className="bg-slate-50 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-slate-800 mb-6 text-center">Sports Achievements</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-sky-600 text-white">
+                    <th className="px-4 py-3 text-left rounded-tl-lg">Year</th>
+                    <th className="px-4 py-3 text-left">Event</th>
+                    <th className="px-4 py-3 text-left">Sport</th>
+                    <th className="px-4 py-3 text-left rounded-tr-lg">Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {achievements.map((a, i) => (
+                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                      <td className="px-4 py-3 font-semibold text-sky-600">{a.year}</td>
+                      <td className="px-4 py-3 text-slate-700">{a.event}</td>
+                      <td className="px-4 py-3 text-slate-600">{a.sport}</td>
+                      <td className="px-4 py-3">
+                        <span className="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-medium">{a.result}</span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+}

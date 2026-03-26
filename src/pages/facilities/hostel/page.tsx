@@ -1,0 +1,197 @@
+
+import { useState, useEffect } from 'react';
+import { supabase } from '../../../lib/supabase';
+import Navbar from '../../home/components/Navbar';
+import Footer from '../../home/components/Footer';
+
+interface FacilityPhoto {
+  id: string;
+  image_url: string;
+  caption: string;
+}
+
+interface Facility {
+  id: string;
+  name: string;
+  description: string;
+}
+
+export default function HostelPage() {
+  const [facility, setFacility] = useState<Facility | null>(null);
+  const [photos, setPhotos] = useState<FacilityPhoto[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedPhoto, setSelectedPhoto] = useState<FacilityPhoto | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const [enquiryOpen, setEnquiryOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const pageKey = 'reloaded-' + window.location.pathname.replace(/\//g, '-');
+    if (!sessionStorage.getItem(pageKey)) {
+      sessionStorage.setItem(pageKey, 'true');
+      window.location.reload();
+    }
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    fetchFacilityData();
+  }, []);
+
+  const fetchFacilityData = async () => {
+    try {
+      const { data: facilityData, error: facilityError } = await supabase
+        .from('facilities')
+        .select('*')
+        .eq('slug', 'hostel')
+        .maybeSingle();
+
+      if (facilityError) throw facilityError;
+
+      if (facilityData) {
+        setFacility(facilityData);
+
+        const { data: photosData, error: photosError } = await supabase
+          .from('facility_photos')
+          .select('*')
+          .eq('facility_id', facilityData.id)
+          .order('created_at', { ascending: false });
+
+        if (photosError) throw photosError;
+        setPhotos(photosData || []);
+      }
+    } catch (error) {
+      console.error('Error fetching facility data:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <>
+        <Navbar scrolled={scrolled} />
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <i className="ri-loader-4-line text-4xl text-teal-600 animate-spin"></i>
+            <p className="mt-4 text-gray-600">Loading...</p>
+          </div>
+        </div>
+        <Footer />
+      </>
+    );
+  }
+
+  return (
+    <>
+      <Navbar scrolled={scrolled} />
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-teal-50">
+        {/* Hero Section */}
+        <div className="relative bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-24">
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <i className="ri-hotel-bed-line text-5xl"></i>
+              </div>
+              <h1 className="text-5xl font-bold mb-4">{facility?.name || 'Hostel'}</h1>
+              <p className="text-xl text-teal-100 max-w-3xl mx-auto">
+                A home away from home for our students
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Description Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">About Our Hostel</h2>
+            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+              {facility?.description ? (
+                <p className="whitespace-pre-wrap">{facility.description}</p>
+              ) : (
+                <p>
+                  DMI Engineering College provides comfortable and secure hostel accommodation for both
+                  boys and girls. Our hostels offer well-furnished rooms, 24/7 security, nutritious
+                  meals, recreational facilities, and a supportive environment that promotes academic
+                  focus and personal growth. With modern amenities including Wi‑Fi, common rooms, and
+                  study areas, students enjoy a comfortable living experience that feels like home.
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* Photo Gallery */}
+          {photos.length > 0 && (
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Photo Gallery</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {photos.map((photo) => (
+                  <div
+                    key={photo.id}
+                    className="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                    onClick={() => setSelectedPhoto(photo)}
+                  >
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src={photo.image_url}
+                        alt={photo.caption}
+                        className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    {photo.caption && (
+                      <div className="p-4">
+                        <p className="text-sm text-gray-700 font-medium">{photo.caption}</p>
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                      <span className="text-white font-medium">Click to view</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {photos.length === 0 && (
+            <div className="text-center py-16">
+              <i className="ri-image-line text-6xl text-gray-300 mb-4"></i>
+              <p className="text-gray-500 text-lg">No photos available yet</p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Photo Modal */}
+      {selectedPhoto && (
+        <div
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedPhoto(null)}
+        >
+          <button
+            className="absolute top-4 right-4 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+            onClick={() => setSelectedPhoto(null)}
+          >
+            <i className="ri-close-line text-2xl"></i>
+          </button>
+          <div className="max-w-5xl w-full">
+            <img src={selectedPhoto.image_url} alt={selectedPhoto.caption} className="w-full h-auto rounded-lg" />
+            {selectedPhoto.caption && (
+              <p className="text-white text-center mt-4 text-lg">{selectedPhoto.caption}</p>
+            )}
+          </div>
+        </div>
+      )}
+
+      <Footer enquiryOpen={enquiryOpen} setEnquiryOpen={setEnquiryOpen} />
+    </>
+  );
+}
