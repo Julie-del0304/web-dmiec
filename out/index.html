@@ -14,10 +14,23 @@
   <meta name="geo.placename" content="Aralvaimozhi, Tamil Nadu, India">
   <meta name="geo.region" content="IN-TN">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-Cas_Wuc8.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DMPb2yYh.css">
+  <script type="module" crossorigin src="/assets/index-B3qwPWoY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CGd9HGMb.css">
 </head>
 <body>
   <div id="root"></div>
+
+  <!-- Vapi Support -->
+  <script src="https://cdn.jsdelivr.net/npm/@vapi-ai/web@2.5.2/dist/vapi-sdk.js" defer></script>
+  <script>
+    window.addEventListener('load', function() {
+      if (typeof Vapi !== 'undefined') {
+        const vapi = new Vapi('your-public-key-here');
+        vapi.render({
+          assistantId: 'your-assistant-id-here',
+        });
+      }
+    });
+  </script>
 </body>
 </html>
