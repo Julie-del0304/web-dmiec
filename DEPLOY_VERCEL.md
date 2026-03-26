@@ -28,4 +28,4 @@ vercel --prod --yes
 ## Notes
 
 - `vercel.json` is configured for Vite and uses a catch-all rewrite to `index.html` so React Router pages work on refresh.
-- Build output is `dist` and build command is `npm run build`.
+- Build output is `out` and build command is `npm run build`.
