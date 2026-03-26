@@ -2,7 +2,7 @@
 
 Use this one-click Vercel deploy link to create your demo instantly:
 
-- **Deploy now:** https://vercel.com/new/clone?repository-url=https://github.com/Julie-del0304/web-dmiec
+- **Deploy now:** https://vercel.com/new/clone?repository-url=https://github.com/Julie-del0304/webdmiec
 
 After clicking the link and finishing setup, Vercel will give you a demo URL like:
 
