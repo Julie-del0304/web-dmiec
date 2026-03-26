@@ -74,6 +74,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),
+      xlsx: resolve(__dirname, "./src/shims/xlsx.ts"),
     },
   },
   server: {
