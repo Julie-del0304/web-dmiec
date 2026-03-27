@@ -48,8 +48,6 @@ const ICON_COLOR_MAP: Record<string, string> = {
 };
 
 
-
-// ─── Helper: parse Excel rows into StudentRow[] ───────────────────────────────
 function parseStudentRows(rows: unknown[][]): StudentRow[] {
   if (!rows || rows.length < 2) return [];
 
@@ -79,6 +77,13 @@ function parseStudentRows(rows: unknown[][]): StudentRow[] {
       branch: String((r as unknown[])[colIdx.branch] ?? '').toUpperCase().trim(),
       company: String((r as unknown[])[colIdx.company] ?? ''),
     }));
+}
+
+function parseDelimitedRows(text: string): unknown[][] {
+  return text
+    .split(/\r?\n/)
+    .map((line) => line.split(',').map((cell) => cell.trim()))
+    .filter((row) => row.some((cell) => cell !== ''));
 }
 
 // ─── Branch breakdown ─────────────────────────────────────────────────────────
@@ -131,32 +136,25 @@ export default function PlacementRecordsPage() {
     loadRecords();
   }, [loadRecords]);
 
-  // ── Excel upload ──────────────────────────────────────────────────────────
+  // ── CSV upload ────────────────────────────────────────────────────────────
   const handleFileUpload = (year: string, file: File) => {
     setUploadingYear(year);
     const reader = new FileReader();
     reader.onload = async (e) => {
       try {
-        const arrayBuffer = e.target?.result;
-        if (!arrayBuffer) throw new Error('Failed to read file');
-        const data = new Uint8Array(arrayBuffer as ArrayBuffer);
-        const XLSX = await loadXlsxModule();
-        const workbook = XLSX.read(data, { type: 'array' });
-        const sheet = workbook.Sheets[workbook.SheetNames[0]];
-        // FIX: Use unknown[][] so parseStudentRows can do its own safe casting
-        const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 }) as unknown[][];
+
         const students = parseStudentRows(rows);
         setYearDataMap((prev) => ({
           ...prev,
           [year]: { ...prev[year], students, fileName: file.name },
         }));
       } catch (err) {
-        console.error('Error parsing Excel:', err);
+        console.error('Error parsing CSV:', err);
       } finally {
         setUploadingYear(null);
       }
     };
-    reader.readAsArrayBuffer(file);
+    reader.readAsText(file);
   };
 
   // ── Chart data ────────────────────────────────────────────────────────────
@@ -419,7 +417,7 @@ export default function PlacementRecordsPage() {
                       </ResponsiveContainer>
                     </div>
 
-                    {/* Branch breakdown — only after Excel upload */}
+                    {/* Branch breakdown — only after CSV upload */}
                     {activeBranch.length > 0 ? (
                       <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
                         <h4 className="text-base font-semibold text-gray-900 mb-4">
@@ -446,14 +444,14 @@ export default function PlacementRecordsPage() {
                       <div className="bg-white rounded-2xl border border-dashed border-gray-300 p-6 flex flex-col items-center justify-center text-center shadow-sm">
                         <i className="ri-file-chart-line text-4xl text-gray-300 mb-2" />
                         <p className="text-gray-500 text-sm">
-                          Upload the Excel sheet for <br />
+                          Upload the CSV file for <br />
                           <strong>{activeRecord.academic_year}</strong> to see branch-wise chart
                         </p>
                       </div>
                     )}
                   </div>
 
-                  {/* Excel Upload + Student Table */}
+                  {/* CSV Upload + Student Table */}
                   <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
                       <div>
@@ -462,7 +460,7 @@ export default function PlacementRecordsPage() {
                         </h4>
                         {activeYD.fileName && (
                           <p className="text-xs text-teal-600 mt-0.5 flex items-center gap-1">
-                            <i className="ri-file-excel-2-line" /> {activeYD.fileName}
+                            <i className="ri-file-3-line" /> {activeYD.fileName}
                           </p>
                         )}
                       </div>
@@ -471,7 +469,7 @@ export default function PlacementRecordsPage() {
                         {/* FIX: ref callback typed as HTMLInputElement | null (React 18 compatible) */}
                         <input
                           type="file"
-                          accept=".xlsx,.xls,.csv"
+                          accept=".csv,text/csv"
                           className="hidden"
                           ref={(el: HTMLInputElement | null) => {
                             if (activeYear) fileInputRefs.current[activeYear] = el;
@@ -492,7 +490,7 @@ export default function PlacementRecordsPage() {
                           {uploadingYear === activeYear ? (
                             <><i className="ri-loader-4-line animate-spin" /> Processing…</>
                           ) : (
-                            <><i className="ri-file-excel-2-line" /> Upload Excel</>
+                            <><i className="ri-file-3-line" /> Upload CSV</>
                           )}
                         </button>
                         {activeYD.students.length > 0 && (
@@ -537,7 +535,7 @@ export default function PlacementRecordsPage() {
                         <i className="ri-upload-cloud-2-line text-4xl text-gray-300 mb-3" />
                         <p className="text-gray-500 font-medium">No student data uploaded yet</p>
                         <p className="text-gray-400 text-sm mt-1">
-                          Upload an Excel file with columns: S.No, Regd. No, Name, Branch, Company
+                          Upload a CSV file with columns: S.No, Regd. No, Name, Branch, Company
                         </p>
                         <button
                           onClick={() => {
@@ -545,7 +543,7 @@ export default function PlacementRecordsPage() {
                           }}
                           className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-teal-50 text-teal-700 text-sm font-semibold rounded-lg hover:bg-teal-100 transition-colors border border-teal-200"
                         >
-                          <i className="ri-file-excel-2-line" /> Choose Excel File
+                          <i className="ri-file-3-line" /> Choose CSV File
                         </button>
                       </div>
                     )}
