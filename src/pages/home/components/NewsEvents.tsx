@@ -46,17 +46,17 @@ function detectTag(title: string): string {
 }
  
 const tagColors: Record<string, { bg: string; color: string }> = {
-  Placement:            { bg: '#dbeafe', color: '#1d4ed8' },
-  Achievement:          { bg: '#dcfce7', color: '#15803d' },
-  Award:                { bg: '#fef9c3', color: '#854d0e' },
+  Placement:            { bg: '#f3e8ff', color: '#6b21a8' },
+  Achievement:          { bg: '#f3e8ff', color: '#5a168f' },
+  Award:                { bg: '#fef9c3', color: '#92400e' },
   Certification:        { bg: '#f3e8ff', color: '#7e22ce' },
-  Research:             { bg: '#e0f2fe', color: '#0369a1' },
+  Research:             { bg: '#f3e8ff', color: '#5a168f' },
   Hackathon:            { bg: '#ede9fe', color: '#6d28d9' },
-  Symposium:            { bg: '#ccfbf1', color: '#0f766e' },
-  'Sports Day':         { bg: '#fee2e2', color: '#b91c1c' },
+  Symposium:            { bg: '#f5f3ff', color: '#5a168f' },
+  'Sports Day':         { bg: '#fef3c7', color: '#92400e' },
   Cultural:             { bg: '#fce7f3', color: '#9d174d' },
   'Paper Presentation': { bg: '#ffedd5', color: '#c2410c' },
-  Workshop:             { bg: '#e0f2fe', color: '#0369a1' },
+  Workshop:             { bg: '#f3e8ff', color: '#5a168f' },
 };
  
 // ── Left panel: placement image slider (from file 2) ─────────────────────
@@ -107,16 +107,16 @@ function PlacementPanel({ items, loading }: PlacementPanelProps) {
         display: 'flex', alignItems: 'center', gap: 8,
         flexShrink: 0,
       }}>
-        <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#2563eb', flexShrink: 0 }} />
-        <span style={{ fontSize: 15, fontWeight: 700, color: '#0f172a' }}>News &amp; Achievements</span>
+        <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#5a168f', flexShrink: 0 }} />
+        <span style={{ fontSize: 15, fontWeight: 700, color: '#2f1559' }}>News &amp; Achievements</span>
       </div>
  
       {loading ? (
         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div style={{ width: 36, height: 36, border: '3px solid #ccc', borderTopColor: '#2563eb', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
+          <div style={{ width: 36, height: 36, border: '3px solid #ccc', borderTopColor: '#5a168f', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
         </div>
       ) : items.length === 0 ? (
-        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: 14 }}>
+        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7c5aa6', fontSize: 14 }}>
           No placements added yet
         </div>
       ) : (
@@ -168,7 +168,7 @@ function PlacementPanel({ items, loading }: PlacementPanelProps) {
                   <button key={i} onClick={() => goTo(i)} style={{
                     width: i === current ? 22 : 8, height: 8, borderRadius: 4,
                     border: 'none', cursor: 'pointer', padding: 0,
-                    background: i === current ? '#2563eb' : 'rgba(255,255,255,0.7)',
+                    background: i === current ? '#5a168f' : 'rgba(255,255,255,0.7)',
                     transition: 'all 0.3s ease',
                   }} />
                 ))}
@@ -193,12 +193,12 @@ function PlacementPanel({ items, loading }: PlacementPanelProps) {
               letterSpacing: '0.05em',
             }}>Placement</div>
  
-            <p style={{ fontSize: 15, fontWeight: 700, color: '#0f172a', margin: '0 0 6px', lineHeight: 1.4 }}>
+            <p style={{ fontSize: 15, fontWeight: 700, color: '#2f1559', margin: '0 0 6px', lineHeight: 1.4 }}>
               {item?.name}
             </p>
-            <p style={{ fontSize: 13, color: '#2563eb', fontWeight: 600, margin: '0 0 4px' }}>{item?.branch}</p>
-            <p style={{ fontSize: 13, color: '#475569', margin: 0 }}>
-              Placed at <strong style={{ color: '#1d4ed8' }}>{item?.company}</strong>
+            <p style={{ fontSize: 13, color: '#5a168f', fontWeight: 600, margin: '0 0 4px' }}>{item?.branch}</p>
+            <p style={{ fontSize: 13, color: '#5b3a82', margin: 0 }}>
+              Placed at <strong style={{ color: '#6b21a8' }}>{item?.company}</strong>
             </p>
  
             <p style={{ fontSize: 12, color: '#cbd5e1', margin: '10px 0 0', textAlign: 'right' }}>
@@ -235,8 +235,8 @@ function EventsList({ items, loading }: EventsListProps) {
         display: 'flex', alignItems: 'center', gap: 8,
         flexShrink: 0,
       }}>
-        <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#f59e0b', flexShrink: 0 }} />
-        <span style={{ fontSize: 15, fontWeight: 700, color: '#0f172a' }}>Events &amp; Programs</span>
+        <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#facc15', flexShrink: 0 }} />
+        <span style={{ fontSize: 15, fontWeight: 700, color: '#2f1559' }}>Events &amp; Programs</span>
       </div>
  
       <div style={{ flex: 1, overflowY: 'auto', padding: '8px 0' }}>
@@ -245,26 +245,26 @@ function EventsList({ items, loading }: EventsListProps) {
             <div style={{ width: 32, height: 32, border: '3px solid #e2e8f0', borderTopColor: '#f59e0b', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
           </div>
         ) : items.length === 0 ? (
-          <div style={{ height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', fontSize: 14 }}>
+          <div style={{ height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7c5aa6', fontSize: 14 }}>
             No events added yet
           </div>
         ) : (
           items.map((item, idx) => {
             const tag = item.tag || detectTag(item.title);
-            const tagStyle = tagColors[tag] || { bg: '#f1f5f9', color: '#475569' };
+            const tagStyle = tagColors[tag] || { bg: '#f1f5f9', color: '#5b3a82' };
             return (
               <div key={item.id} style={{
                 padding: '18px 20px',
                 borderBottom: idx < items.length - 1 ? '1px solid #e2e8f0' : 'none',
               }}>
                 {item.date && (
-                  <p style={{ fontSize: 12, color: '#94a3b8', margin: '0 0 6px', fontWeight: 500 }}>{item.date}</p>
+                  <p style={{ fontSize: 12, color: '#7c5aa6', margin: '0 0 6px', fontWeight: 500 }}>{item.date}</p>
                 )}
-                <p style={{ fontSize: 15, fontWeight: 700, color: '#0f172a', margin: '0 0 6px', lineHeight: 1.4 }}>
+                <p style={{ fontSize: 15, fontWeight: 700, color: '#2f1559', margin: '0 0 6px', lineHeight: 1.4 }}>
                   {item.title}
                 </p>
                 {item.description && (
-                  <p style={{ fontSize: 13, color: '#475569', margin: '0 0 8px', lineHeight: 1.5 }}>
+                  <p style={{ fontSize: 13, color: '#5b3a82', margin: '0 0 8px', lineHeight: 1.5 }}>
                     {item.description}
                   </p>
                 )}
@@ -317,7 +317,7 @@ export default function NewsEvents() {
   }, []);
  
   return (
-    <section id="news-events" style={{ background: '#f8fafc', fontFamily: "'Segoe UI', system-ui, sans-serif" }}>
+    <section id="news-events" style={{ background: '#f8f8fa', fontFamily: "'Segoe UI', system-ui, sans-serif" }}>
       <style>{`
         @keyframes spin { to { transform: rotate(360deg); } }
         @media (max-width: 768px) {
@@ -329,9 +329,9 @@ export default function NewsEvents() {
  
         {/* Header */}
         <div style={{ marginBottom: 40, textAlign: 'center' }}>
-          <p style={{ color: '#2563eb', fontWeight: 700, fontSize: 12, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 6 }}>Stay Updated</p>
-          <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, color: '#0f172a', margin: 0, lineHeight: 1.1 }}>News &amp; Events</h2>
-          <div style={{ width: 48, height: 4, background: '#2563eb', borderRadius: 2, margin: '10px auto 0' }} />
+          <p style={{ color: '#5a168f', fontWeight: 700, fontSize: 12, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 6 }}>Stay Updated</p>
+          <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, color: '#2f1559', margin: 0, lineHeight: 1.1 }}>News &amp; Events</h2>
+          <div style={{ width: 48, height: 4, background: '#5a168f', borderRadius: 2, margin: '10px auto 0' }} />
         </div>
  
         {/* Two-column grid layout (from file 1), with dedicated panels (from file 2) */}
@@ -341,7 +341,7 @@ export default function NewsEvents() {
         </div>
  
         {/* Subscribe Banner */}
-        <div style={{ marginTop: 32, background: 'linear-gradient(135deg, #38bdf8 0%, #3b82f6 40%, #2563eb 100%)', borderRadius: 16, padding: '24px 24px', textAlign: 'center', boxShadow: '0 8px 24px rgba(37,99,235,.30)' }}>
+        <div style={{ marginTop: 32, background: 'linear-gradient(135deg, #5a168f 0%, #6d28d9 55%, #7c3aed 100%)', borderRadius: 16, padding: '24px 24px', textAlign: 'center', boxShadow: '0 8px 24px rgba(90,22,143,.30)' }}>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: 10 }}>
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
@@ -353,7 +353,7 @@ export default function NewsEvents() {
             Don't miss out on important announcements, events, and opportunities. Subscribe to our YouTube channel for regular updates.
           </p>
           <a href={YOUTUBE_CHANNEL} target="_blank" rel="noopener noreferrer"
-            style={{ display: 'inline-block', background: '#fff', color: '#2563eb', textDecoration: 'none', padding: '10px 28px', borderRadius: 8, fontWeight: 700, fontSize: 13, boxShadow: '0 2px 12px rgba(0,0,0,.12)' }}>
+            style={{ display: 'inline-block', background: '#facc15', color: '#2f1559', textDecoration: 'none', padding: '10px 28px', borderRadius: 8, fontWeight: 700, fontSize: 13, boxShadow: '0 2px 12px rgba(0,0,0,.12)' }}>
             Subscribe Now
           </a>
         </div>
