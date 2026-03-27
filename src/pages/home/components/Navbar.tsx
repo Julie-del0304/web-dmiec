@@ -277,7 +277,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
       style={{ left: 0, right: 0, top: 'var(--ticker-height, 0px)', overflow: 'visible' }}
     >
       {/* Top strip */}
-      <div className="flex items-center justify-between px-3 sm:px-5 lg:px-8 py-1.5 border-b border-slate-100 w-full">
+      <div className="flex items-center justify-between px-3 sm:px-5 lg:px-8 py-1.5 border-b border-purple-100 bg-purple-50/40 w-full">
         <button onClick={handleHomeClick}
           className="flex items-center gap-3 cursor-pointer flex-1 min-w-0 text-left p-0 bg-transparent border-0"
           style={{ background: 'none' }}>
