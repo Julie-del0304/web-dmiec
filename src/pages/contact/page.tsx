@@ -45,17 +45,19 @@ export default function ContactPage() {
   value: `Team Lead: Arockia Juliya A.R
 Assistant Lead: Siva Marimuthu
 
-Full Stack:
-1. Asha
-2. Abinsam
-3. Tony Blair Ubahara Wencislas
+Full Stack
+1. Arockia Juliya A.R
+2.Siva Marimuthu
+3. Abinsam
+4. Tony Blair Ubahara Wencislas
 
 Database:
 1. Santhana Abisha
-2. Veni
+2. Veni.P.E
+3.Nivi Dharshini.N.J
 
 Software Testing:
-1. Priya
+1. R.Shanmugapriya
 2. Varsha`,
   color: 'bg-rose-100 text-rose-600'
 }
