@@ -63,7 +63,7 @@ export default function AnnouncementsBar() {
         left: 0,
         right: 0,
         zIndex: 70,
-        background: 'linear-gradient(to right, #0066ff, #003d99)',
+        background: 'linear-gradient(to right, #4b0082, #3f006f)',
       }}
     >
       <style>{`
@@ -86,7 +86,7 @@ export default function AnnouncementsBar() {
             <i className="ri-megaphone-fill text-lg mr-2"></i>
             {a.title && <span className="font-bold mr-2">{a.title}:</span>}
             <span className="font-medium">{a.message}</span>
-            <span className="mx-4 text-white/50">•</span>
+            <span className="mx-4 text-yellow-300/80">•</span>
           </div>
         ))}
       </div>

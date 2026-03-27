@@ -4,7 +4,7 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell,
 } from 'recharts';
-import * as XLSX from 'xlsx';
+import * as XLSX from '../../../lib/xlsx-shim';
 import { placementService } from '../../../services/placementService';
 import type { PlacementRecord } from '../../../types/placement';
 import Navbar from '../../home/components/Navbar';
@@ -46,6 +46,7 @@ const ICON_COLOR_MAP: Record<string, string> = {
   amber: 'text-amber-500',
   cyan: 'text-cyan-500',
 };
+
 
 // ─── Helper: parse Excel rows into StudentRow[] ───────────────────────────────
 function parseStudentRows(rows: unknown[][]): StudentRow[] {
@@ -141,7 +142,7 @@ export default function PlacementRecordsPage() {
         const workbook = XLSX.read(data, { type: 'array' });
         const sheet = workbook.Sheets[workbook.SheetNames[0]];
         // FIX: Use unknown[][] so parseStudentRows can do its own safe casting
-        const rows = XLSX.utils.sheet_to_json<unknown[]>(sheet, { header: 1 });
+        const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 }) as unknown[][];
         const students = parseStudentRows(rows);
         setYearDataMap((prev) => ({
           ...prev,
