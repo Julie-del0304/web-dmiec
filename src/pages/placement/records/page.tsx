@@ -4,6 +4,7 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell,
 } from 'recharts';
+import * as XLSX from '../../../lib/xlsx-shim';
 import { placementService } from '../../../services/placementService';
 import type { PlacementRecord } from '../../../types/placement';
 import Navbar from '../../home/components/Navbar';
@@ -46,12 +47,6 @@ const ICON_COLOR_MAP: Record<string, string> = {
   cyan: 'text-cyan-500',
 };
 
-
-async function loadXlsxModule() {
-  const moduleName = 'xlsx';
-  const importAtRuntime = new Function('m', 'return import(m);') as (m: string) => Promise<any>;
-  return importAtRuntime(moduleName);
-}
 
 // ─── Helper: parse Excel rows into StudentRow[] ───────────────────────────────
 function parseStudentRows(rows: unknown[][]): StudentRow[] {
@@ -139,12 +134,11 @@ export default function PlacementRecordsPage() {
   const handleFileUpload = (year: string, file: File) => {
     setUploadingYear(year);
     const reader = new FileReader();
-    reader.onload = async (e) => {
+    reader.onload = (e) => {
       try {
         const arrayBuffer = e.target?.result;
         if (!arrayBuffer) throw new Error('Failed to read file');
         const data = new Uint8Array(arrayBuffer as ArrayBuffer);
-        const XLSX = await loadXlsxModule();
         const workbook = XLSX.read(data, { type: 'array' });
         const sheet = workbook.Sheets[workbook.SheetNames[0]];
         // FIX: Use unknown[][] so parseStudentRows can do its own safe casting

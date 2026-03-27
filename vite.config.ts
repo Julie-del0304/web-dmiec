@@ -70,14 +70,10 @@ export default defineConfig({
   build: {
     sourcemap: true,
     outDir: "out",
-    rollupOptions: {
-      external: ["xlsx"],
-    },
   },
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),
-      "xlsx": resolve(__dirname, "./src/lib/xlsx-shim.ts"),
     },
   },
   server: {
