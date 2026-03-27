@@ -39,6 +39,26 @@ export default function ContactPage() {
     { icon: 'ri-phone-line', label: 'Phone', value: '+91 9445970141\n+91 9150076732', color: 'bg-emerald-100 text-emerald-600' },
     { icon: 'ri-mail-line', label: 'Email', value: 'dmieckk@gmail.com', color: 'bg-amber-100 text-amber-600' },
     { icon: 'ri-time-line', label: 'Office Hours', value: 'Mon – Sat: 9:00 AM – 4:00 PM\nSunday: Closed', color: 'bg-rose-100 text-rose-600' },
+    {
+  icon: 'ri-time-line',
+  label: 'Project Team',
+  value: `Team Lead: Arockia Juliya A.R
+Assistant Lead: Siva Marimuthu
+
+Full Stack:
+1. Asha
+2. Abinsam
+3. Tony Blair Ubahara Wencislas
+
+Database:
+1. Santhana Abisha
+2. Veni
+
+Software Testing:
+1. Priya
+2. Varsha`,
+  color: 'bg-rose-100 text-rose-600'
+}
   ];
 
   return (
@@ -59,14 +79,47 @@ export default function ContactPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
           {/* Contact Cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
-            {contactInfo.map((info) => (
-              <div key={info.label} className="bg-white border border-slate-100 rounded-xl p-6 shadow-sm text-center">
-                <div className={`w-12 h-12 flex items-center justify-center rounded-full mx-auto mb-4 ${info.color}`}>
-                  <i className={`${info.icon} text-xl`}></i>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-14">
+            {contactInfo.map((item) => (
+              <div
+                key={item.label}
+                className={`${
+                  item.label === 'Project Team' ? 'md:col-span-2' : ''
+                } bg-white border border-slate-100 rounded-xl p-6 shadow-sm`}
+              >
+                <div className={`w-12 h-12 flex items-center justify-center rounded-full mx-auto mb-4 ${item.color}`}>
+                  <i className={`${item.icon} text-xl`}></i>
                 </div>
-                <h3 className="font-semibold text-slate-800 mb-2">{info.label}</h3>
-                <p className="text-sm text-slate-500 whitespace-pre-line leading-relaxed">{info.value}</p>
+                <h3 className="font-semibold text-slate-800 mb-2 text-center">{item.label}</h3>
+                {item.label === 'Project Team' ? (
+                  <div className="text-sm leading-5 text-left max-w-xs mx-auto">
+                    <p><strong className="text-slate-700">Team Lead:</strong> Arockia Juliya A.R</p>
+                    <p><strong className="text-slate-700">Assistant Lead:</strong> Siva Marimuthu</p>
+
+                    <p className="mt-2 font-semibold text-slate-700">Full Stack:</p>
+                    <ul className="list-disc ml-5 text-slate-500">
+                      <li>Asha</li>
+                      <li>Abinsam</li>
+                      <li>Tony Blair Ubahara Wencislas</li>
+                    </ul>
+
+                    <p className="mt-2 font-semibold text-slate-700">Database:</p>
+                    <ul className="list-disc ml-5 text-slate-500">
+                      <li>Santhana Abisha</li>
+                      <li>Veni</li>
+                    </ul>
+
+                    <p className="mt-2 font-semibold text-slate-700">Software Testing:</p>
+                    <ul className="list-disc ml-5 text-slate-500">
+                      <li>Priya</li>
+                      <li>Varsha</li>
+                    </ul>
+                  </div>
+                ) : (
+                  <p className="text-sm text-slate-500 whitespace-pre-line leading-relaxed text-center">
+                    {item.value}
+                  </p>
+                )}
               </div>
             ))}
           </div>
