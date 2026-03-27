@@ -62,6 +62,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #5a168f;
 
+
   background-color: #f8f8fa;
   padding-top: calc(var(--ticker-height, 0px) + var(--navbar-height, 0px));
 }
