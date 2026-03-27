@@ -4,6 +4,7 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell,
 } from 'recharts';
+
 import { placementService } from '../../../services/placementService';
 import type { PlacementRecord } from '../../../types/placement';
 import Navbar from '../../home/components/Navbar';
@@ -47,11 +48,6 @@ const ICON_COLOR_MAP: Record<string, string> = {
 };
 
 
-async function loadXlsxModule() {
-  const moduleName = 'xlsx';
-  const importAtRuntime = new Function('m', 'return import(m);') as (m: string) => Promise<any>;
-  return importAtRuntime(moduleName);
-}
 
 // ─── Helper: parse Excel rows into StudentRow[] ───────────────────────────────
 function parseStudentRows(rows: unknown[][]): StudentRow[] {
