@@ -103,6 +103,7 @@ export default function ContactPage() {
               </div>
             </div>
 
+<<<<<<< HEAD
             {/* Contact Form */}
             <div>
               <h2 className="text-xl font-bold text-slate-800 mb-4">Send Us a Message</h2>
@@ -157,9 +158,23 @@ export default function ContactPage() {
                   </button>
                 </form>
               )}
+=======
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i className="ri-phone-line text-2xl text-emerald-600"></i>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
+                <p className="text-gray-600">
+                  +91 4651 289 000<br />
+                  +91 9445970141
+                </p>
+              </div>
+>>>>>>> 0da9a39cf9cf4044fc21b0e8a689ad17a76c670f
             </div>
           </div>
 
+<<<<<<< HEAD
           {/* Department Contacts */}
           <div className="mt-14">
             <h2 className="text-xl font-bold text-slate-800 mb-6">Department Contact Numbers</h2>
@@ -186,6 +201,19 @@ export default function ContactPage() {
                   </div>
                 </div>
               ))}
+=======
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-violet-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i className="ri-mail-line text-2xl text-violet-600"></i>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
+                <p className="text-gray-600">
+                  info@dmiengg.edu.in<br />
+                  dmieckk@gmail.com
+                </p>
+              </div>
+>>>>>>> 0da9a39cf9cf4044fc21b0e8a689ad17a76c670f
             </div>
           </div>
 
@@ -211,6 +239,7 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
+<<<<<<< HEAD
 
               {/* Assistant Lead */}
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 flex flex-col sm:flex-row hover:shadow-xl transition-shadow duration-300">
@@ -229,6 +258,15 @@ export default function ContactPage() {
                     <span className="text-xs">siva.marimuthu@dmiengg.edu.in</span>
                   </div>
                 </div>
+=======
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Office Hours</h3>
+                <p className="text-gray-600">
+                  Monday - Friday: 9:00 AM - 4:00 PM<br />
+                  Saturday: 9:00 AM - 3:00 PM<br />
+                  Sunday: Closed
+                </p>
+>>>>>>> 0da9a39cf9cf4044fc21b0e8a689ad17a76c670f
               </div>
             </div>
           </div>
