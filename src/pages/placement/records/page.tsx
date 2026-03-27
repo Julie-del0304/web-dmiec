@@ -4,6 +4,7 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell,
 } from 'recharts';
+
 import { placementService } from '../../../services/placementService';
 import type { PlacementRecord } from '../../../types/placement';
 import Navbar from '../../home/components/Navbar';
@@ -46,7 +47,7 @@ const ICON_COLOR_MAP: Record<string, string> = {
   cyan: 'text-cyan-500',
 };
 
-// ─── Helper: parse Spreadsheet rows into StudentRow[] ─────────────────────────
+
 function parseStudentRows(rows: unknown[][]): StudentRow[] {
   if (!rows || rows.length < 2) return [];
 
@@ -139,11 +140,9 @@ export default function PlacementRecordsPage() {
   const handleFileUpload = (year: string, file: File) => {
     setUploadingYear(year);
     const reader = new FileReader();
-    reader.onload = (e) => {
+    reader.onload = async (e) => {
       try {
-        const text = e.target?.result;
-        if (typeof text !== 'string') throw new Error('Failed to read CSV file');
-        const rows = parseDelimitedRows(text);
+
         const students = parseStudentRows(rows);
         setYearDataMap((prev) => ({
           ...prev,
