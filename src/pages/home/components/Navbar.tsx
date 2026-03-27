@@ -22,12 +22,12 @@ interface DropdownMenuProps {
 function DropdownMenu({ items, onNavigate, width = 'w-56' }: DropdownMenuProps) {
   return (
     <div className="absolute top-full left-0 pt-1 z-[999]">
-      <div className={`${width} bg-white rounded-lg shadow-xl border border-slate-100 py-1`}>
+      <div className={`${width} bg-white rounded-lg shadow-xl border border-purple-100 py-1`}>
         {items.map((item) => (
           <button
             key={item.path}
             onClick={() => onNavigate(item.path)}
-            className="block w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-sky-50 hover:text-sky-600 transition-colors cursor-pointer whitespace-nowrap"
+            className="block w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-purple-50 hover:text-purple-700 transition-colors cursor-pointer whitespace-nowrap"
           >
             {item.name}
           </button>
@@ -236,7 +236,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
     label: string; menuKey: string; items?: NavItem[]; width?: string; children?: React.ReactNode;
   }) => (
     <div className="relative" onMouseEnter={() => handleMouseEnter(menuKey)} onMouseLeave={handleMouseLeave}>
-      <button className="text-sm xl:text-base font-semibold transition-colors whitespace-nowrap cursor-pointer flex items-center text-slate-700 hover:text-sky-600 gap-0.5 py-1">
+      <button className="text-sm xl:text-base font-semibold transition-colors whitespace-nowrap cursor-pointer flex items-center text-white hover:text-yellow-300 gap-0.5 py-1">
         {label}
         <i className={`ri-arrow-down-s-line text-base transition-transform ${openDropdown === menuKey ? 'rotate-180' : ''}`}></i>
       </button>
@@ -249,12 +249,12 @@ export default function Navbar({ scrolled }: NavbarProps) {
   const MobileSection = ({ label, menuKey, children }: { label: string; menuKey: string; children: React.ReactNode }) => (
     <div className="border-b border-slate-100">
       <button onClick={() => toggleMobile(menuKey)}
-        className="flex items-center justify-between w-full text-left text-slate-700 hover:text-sky-600 font-medium cursor-pointer py-3 text-sm">
+        className="flex items-center justify-between w-full text-left text-purple-900 hover:text-purple-700 font-medium cursor-pointer py-3 text-sm">
         {label}
         <i className={`ri-arrow-down-s-line text-lg transition-transform ${openMobileDropdown === menuKey ? 'rotate-180' : ''}`}></i>
       </button>
       {openMobileDropdown === menuKey && (
-        <div className="ml-3 mb-2 space-y-0.5 border-l-2 border-sky-100 pl-3">{children}</div>
+        <div className="ml-3 mb-2 space-y-0.5 border-l-2 border-purple-100 pl-3">{children}</div>
       )}
     </div>
   );
@@ -263,7 +263,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
     <>
       {items.map(item => (
         <button key={item.path} onClick={() => handleNav(item.path)}
-          className="block w-full text-left text-sm text-slate-600 hover:text-sky-600 cursor-pointer py-2">
+          className="block w-full text-left text-sm text-slate-600 hover:text-purple-700 cursor-pointer py-2">
           {item.name}
         </button>
       ))}
@@ -326,10 +326,10 @@ export default function Navbar({ scrolled }: NavbarProps) {
       </div>
 
       {/* Desktop nav */}
-      <nav className="hidden xl:block w-full px-4 bg-white border-t border-slate-100" style={{ overflow: 'visible' }}>
+      <nav className="hidden xl:block w-full px-4 bg-purple-900 border-t border-purple-800" style={{ overflow: 'visible' }}>
         <div className="flex items-center justify-center h-10 gap-3 2xl:gap-5 flex-wrap" style={{ overflow: 'visible' }}>
           <button onClick={handleHomeClick}
-            className="text-sm xl:text-base font-semibold text-slate-700 hover:text-sky-600 whitespace-nowrap cursor-pointer py-1">
+            className="text-sm xl:text-base font-semibold text-white hover:text-yellow-300 whitespace-nowrap cursor-pointer py-1">
             Home
           </button>
 
@@ -339,11 +339,11 @@ export default function Navbar({ scrolled }: NavbarProps) {
 
           <DesktopDropdown label="Co-Curricular" menuKey="cocurricular">
             <div className="absolute top-full left-0 pt-1 z-[999]">
-              <div className="w-44 bg-white rounded-lg shadow-xl border border-slate-100 py-1">
+              <div className="w-44 bg-white rounded-lg shadow-xl border border-purple-100 py-1">
                 <div className="relative"
                   onMouseEnter={() => handleSubMouseEnter('membership')}
                   onMouseLeave={handleSubMouseLeave}>
-                  <button className="flex items-center justify-between w-full px-4 py-2 text-sm text-slate-700 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">
+                  <button className="flex items-center justify-between w-full px-4 py-2 text-sm text-slate-700 hover:bg-purple-50 hover:text-purple-700 cursor-pointer">
                     <span>Membership</span>
                     <i className="ri-arrow-right-s-line"></i>
                   </button>
@@ -351,10 +351,10 @@ export default function Navbar({ scrolled }: NavbarProps) {
                     <div className="absolute left-full top-0 ml-1 z-[999]"
                       onMouseEnter={() => { if (subCloseTimer.current) clearTimeout(subCloseTimer.current); }}
                       onMouseLeave={handleSubMouseLeave}>
-                      <div className="w-44 bg-white rounded-lg shadow-xl border border-slate-100 py-1">
+                      <div className="w-44 bg-white rounded-lg shadow-xl border border-purple-100 py-1">
                         {membershipItems.map(item => (
                           <button key={item.path} onClick={() => handleNav(item.path)}
-                            className="block w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">
+                            className="block w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-purple-50 hover:text-purple-700 cursor-pointer">
                             {item.name}
                           </button>
                         ))}
@@ -366,7 +366,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
                 <div className="relative"
                   onMouseEnter={() => handleSubMouseEnter('clubs')}
                   onMouseLeave={handleSubMouseLeave}>
-                  <button className="flex items-center justify-between w-full px-4 py-2 text-sm text-slate-700 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">
+                  <button className="flex items-center justify-between w-full px-4 py-2 text-sm text-slate-700 hover:bg-purple-50 hover:text-purple-700 cursor-pointer">
                     <span>Clubs</span>
                     <i className="ri-arrow-right-s-line"></i>
                   </button>
@@ -374,12 +374,12 @@ export default function Navbar({ scrolled }: NavbarProps) {
                     <div className="absolute left-full top-0 ml-1 z-[999]"
                       onMouseEnter={() => { if (subCloseTimer.current) clearTimeout(subCloseTimer.current); }}
                       onMouseLeave={handleSubMouseLeave}>
-                      <div className="w-72 bg-white rounded-lg shadow-xl border border-slate-100 py-1 max-h-80 overflow-y-auto">
+                      <div className="w-72 bg-white rounded-lg shadow-xl border border-purple-100 py-1 max-h-80 overflow-y-auto">
                         {clubsItems.length === 0 ? (
                           <p className="px-4 py-2 text-sm text-slate-400">No clubs yet</p>
                         ) : clubsItems.map(item => (
                           <button key={item.path} onClick={() => handleNav(item.path)}
-                            className="block w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">
+                            className="block w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-purple-50 hover:text-purple-700 cursor-pointer">
                             {item.name}
                           </button>
                         ))}
@@ -400,11 +400,11 @@ export default function Navbar({ scrolled }: NavbarProps) {
           <DesktopDropdown label="Innovation" menuKey="innovation" items={innovationItems} width="w-44" />
 
           <button onClick={() => handleNav('/contact')}
-            className="text-sm xl:text-base font-semibold text-slate-700 hover:text-sky-600 whitespace-nowrap cursor-pointer py-1">
+            className="text-sm xl:text-base font-semibold text-white hover:text-yellow-300 whitespace-nowrap cursor-pointer py-1">
             Contact
           </button>
           <button onClick={() => navigate('/admin')}
-            className="flex items-center gap-1 text-sm xl:text-base font-semibold text-slate-700 hover:text-sky-600 whitespace-nowrap cursor-pointer py-1">
+            className="flex items-center gap-1 text-sm xl:text-base font-semibold text-white hover:text-yellow-300 whitespace-nowrap cursor-pointer py-1">
             <i className="ri-admin-line text-base"></i> Admin
           </button>
         </div>
@@ -412,7 +412,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-white border-t border-slate-200 w-full" style={{ maxHeight: '80vh', overflowY: 'auto' }}>
+        <div className="xl:hidden bg-white border-t border-purple-100 w-full" style={{ maxHeight: '80vh', overflowY: 'auto' }}>
           {/* Mobile badges — same colors as desktop */}
           <div className="flex items-center gap-2 px-4 py-3 bg-slate-50 border-b border-slate-100 flex-wrap">
             <div style={{
@@ -442,7 +442,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
 
           <div className="px-4 py-1">
             <button onClick={handleHomeClick}
-              className="block w-full text-left text-slate-700 hover:text-sky-600 font-medium cursor-pointer py-3 text-base border-b border-slate-100">
+              className="block w-full text-left text-purple-900 hover:text-purple-700 font-medium cursor-pointer py-3 text-base border-b border-purple-100">
               Home
             </button>
 
@@ -453,24 +453,24 @@ export default function Navbar({ scrolled }: NavbarProps) {
             <MobileSection label="Co-Curricular" menuKey="cocurricular">
               <div>
                 <button onClick={() => toggleMobileSub('membership')}
-                  className="flex items-center justify-between w-full text-left text-sm text-slate-600 hover:text-sky-600 cursor-pointer py-2 font-medium">
+                  className="flex items-center justify-between w-full text-left text-sm text-slate-600 hover:text-purple-700 cursor-pointer py-2 font-medium">
                   Membership
                   <i className={`ri-arrow-down-s-line text-base transition-transform ${openMobileSubDropdown === 'membership' ? 'rotate-180' : ''}`}></i>
                 </button>
                 {openMobileSubDropdown === 'membership' && (
-                  <div className="ml-3 border-l-2 border-sky-50 pl-3 mb-1">
+                  <div className="ml-3 border-l-2 border-purple-50 pl-3 mb-1">
                     <MobileLinkList items={membershipItems} />
                   </div>
                 )}
               </div>
               <div>
                 <button onClick={() => toggleMobileSub('clubs')}
-                  className="flex items-center justify-between w-full text-left text-sm text-slate-600 hover:text-sky-600 cursor-pointer py-2 font-medium">
+                  className="flex items-center justify-between w-full text-left text-sm text-slate-600 hover:text-purple-700 cursor-pointer py-2 font-medium">
                   Clubs
                   <i className={`ri-arrow-down-s-line text-base transition-transform ${openMobileSubDropdown === 'clubs' ? 'rotate-180' : ''}`}></i>
                 </button>
                 {openMobileSubDropdown === 'clubs' && (
-                  <div className="ml-3 border-l-2 border-sky-50 pl-3 mb-1">
+                  <div className="ml-3 border-l-2 border-purple-50 pl-3 mb-1">
                     <MobileLinkList items={clubsItems} />
                   </div>
                 )}
@@ -486,11 +486,11 @@ export default function Navbar({ scrolled }: NavbarProps) {
             <MobileSection label="Innovation" menuKey="innovation"><MobileLinkList items={innovationItems} /></MobileSection>
 
             <button onClick={() => handleNav('/contact')}
-              className="block w-full text-left text-slate-700 hover:text-sky-600 font-medium cursor-pointer py-3 text-sm border-b border-slate-100">
+              className="block w-full text-left text-purple-900 hover:text-purple-700 font-medium cursor-pointer py-3 text-sm border-b border-purple-100">
               Contact
             </button>
             <button onClick={() => { navigate('/admin'); setMobileMenuOpen(false); }}
-              className="flex items-center gap-2 w-full text-left text-slate-700 hover:text-sky-600 font-medium cursor-pointer py-3 text-sm border-b border-slate-100">
+              className="flex items-center gap-2 w-full text-left text-purple-900 hover:text-purple-700 font-medium cursor-pointer py-3 text-sm border-b border-purple-100">
               <i className="ri-admin-line"></i> Admin
             </button>
 
