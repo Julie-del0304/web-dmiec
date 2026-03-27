@@ -80,7 +80,7 @@ const stats = [
   { value: '6', label: 'Engineering Departments', icon: 'ri-building-2-line' },
   { value: '70+', label: 'Expert Professors', icon: 'ri-user-star-line' },
   { value: '3000+', label: 'Graduates', icon: 'ri-graduation-cap-line' },
-  { value: 'A+', label: 'NAAC Grade', icon: 'ri-award-line' },
+  { value: 'B+', label: 'NAAC Grade', icon: 'ri-award-line' },
 ];
 
 function useInView(threshold = 0.15) {
@@ -127,7 +127,7 @@ export default function Programs() {
           font-family: 'Abril Fatface', serif;
           font-size: clamp(2.4rem, 5vw, 3.8rem);
           font-weight: 400;
-          color: #0a1628;
+          color: #5a168f;
           line-height: 1.1;
           letter-spacing: -0.01em;
         }
@@ -261,7 +261,7 @@ export default function Programs() {
           letter-spacing: 0em;
           transition: color 0.2s;
         }
-        .prog-card:hover .prog-name { color: #003366; }
+        .prog-card:hover .prog-name { color: #4b0082; }
 
         /* Tags */
         .prog-tags { display: flex; gap: 6px; flex-wrap: wrap; }
@@ -316,20 +316,20 @@ export default function Programs() {
           font-family: 'Abril Fatface', serif;
           font-size: 2.4rem;
           font-weight: 400;
-          color: #003366;
+          color: #5a168f;
           line-height: 1;
           margin-bottom: 6px;
         }
         .stat-label {
           font-family: 'Nunito', sans-serif;
           font-size: 0.78rem;
-          color: #64748b;
+          color: #6b5a86;
           font-weight: 600;
           letter-spacing: 0.02em;
         }
         .stat-icon {
           font-size: 1.5rem;
-          color: #003366;
+          color: #5a168f;
           opacity: 0.3;
           margin-bottom: 8px;
         }
@@ -352,8 +352,8 @@ export default function Programs() {
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          background: rgba(0,51,102,0.07);
-          color: #003366;
+          background: rgba(90,22,143,0.08);
+          color: #5a168f;
           font-family: 'Nunito', sans-serif;
           font-size: 0.72rem;
           font-weight: 800;
@@ -362,7 +362,7 @@ export default function Programs() {
           padding: 6px 16px;
           border-radius: 99px;
           margin-bottom: 16px;
-          border: 1px solid rgba(0,51,102,0.12);
+          border: 1px solid rgba(90,22,143,0.2);
         }
 
         /* Divider */
@@ -370,7 +370,7 @@ export default function Programs() {
           width: 60px;
           height: 4px;
           border-radius: 99px;
-          background: linear-gradient(90deg, #003366, #0066cc);
+          background: linear-gradient(90deg, #5a168f, #7a33b0);
           margin: 12px auto 18px;
         }
       `}</style>
@@ -398,10 +398,10 @@ export default function Programs() {
               Academic Programs
             </div>
             <h2 className="section-heading">
-              Choose Your <span style={{ color: '#003366' }}>Future</span>
+              Choose Your <span style={{ color: '#5a168f' }}>Future</span>
             </h2>
             <div className="section-divider"></div>
-            <p style={{ color: '#64748b', fontSize: '1rem', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
+            <p style={{ color: '#6b5a86', fontSize: '1rem', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
               Six world-class engineering departments designed to launch careers and ignite innovation
             </p>
           </div>
