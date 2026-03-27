@@ -49,7 +49,8 @@ const ICON_COLOR_MAP: Record<string, string> = {
 
 async function loadXlsxModule() {
   const moduleName = 'xlsx';
-  return import(/* @vite-ignore */ moduleName);
+  const importAtRuntime = new Function('m', 'return import(m);') as (m: string) => Promise<any>;
+  return importAtRuntime(moduleName);
 }
 
 // ─── Helper: parse Excel rows into StudentRow[] ───────────────────────────────
