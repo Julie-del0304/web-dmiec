@@ -48,6 +48,7 @@ const ICON_COLOR_MAP: Record<string, string> = {
 };
 
 
+
 function parseStudentRows(rows: unknown[][]): StudentRow[] {
   if (!rows || rows.length < 2) return [];
 
