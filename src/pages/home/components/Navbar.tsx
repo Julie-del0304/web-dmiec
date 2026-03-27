@@ -236,7 +236,9 @@ export default function Navbar({ scrolled }: NavbarProps) {
     label: string; menuKey: string; items?: NavItem[]; width?: string; children?: React.ReactNode;
   }) => (
     <div className="relative" onMouseEnter={() => handleMouseEnter(menuKey)} onMouseLeave={handleMouseLeave}>
-
+      <button
+        className="flex items-center gap-1 text-white hover:text-yellow-300 text-[18px] font-semibold whitespace-nowrap tracking-wide transition-colors cursor-pointer"
+      >
         {label}
         <i className={`ri-arrow-down-s-line text-base transition-transform ${openDropdown === menuKey ? 'rotate-180' : ''}`}></i>
       </button>
@@ -329,7 +331,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
       <nav className="hidden xl:block w-full px-4 bg-purple-900 border-t border-purple-800" style={{ overflow: 'visible' }}>
         <div className="flex items-center justify-center h-10 gap-3 2xl:gap-5 flex-wrap" style={{ overflow: 'visible' }}>
           <button onClick={handleHomeClick}
-
+            className="text-white hover:text-yellow-300 text-[18px] font-semibold whitespace-nowrap tracking-wide transition-colors cursor-pointer">
             Home
           </button>
 
@@ -400,8 +402,8 @@ export default function Navbar({ scrolled }: NavbarProps) {
           <DesktopDropdown label="Innovation" menuKey="innovation" items={innovationItems} width="w-44" />
 
           <button onClick={() => handleNav('/contact')}
-
-            <i className="ri-admin-line text-base"></i> Admin
+            className="text-white hover:text-yellow-300 text-[18px] font-semibold whitespace-nowrap tracking-wide transition-colors cursor-pointer">
+            Contact
           </button>
         </div>
       </nav>

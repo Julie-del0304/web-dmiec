@@ -266,7 +266,7 @@ export default function OverviewPage() {
             {[
               { name: 'AICTE', full: 'All India Council for Technical Education', status: 'Permanently Approved' },
               { name: 'Anna University', full: 'Anna University, Chennai', status: 'Affiliated' },
-              { name: 'NAAC', full: 'National Assessment and Accreditation Council', status: 'A+ Grade' },
+              { name: 'NAAC', full: 'National Assessment and Accreditation Council', status: 'B+ Grade' },
               { name: 'NBA', full: 'National Board of Accreditation', status: 'Accredited Programs' }
             ].map((accr, index) => (
               <div key={index} className="bg-gradient-to-br from-teal-50 to-white p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300 border border-teal-100">
@@ -288,4 +288,3 @@ export default function OverviewPage() {
     </div>
   );
 }
-

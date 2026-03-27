@@ -166,7 +166,7 @@ export default function IQACPage() {
     {
       year: '2023-24',
       title: 'NAAC B+ Grade Accreditation',
-      description: 'Successfully achieved NAAC A+ grade with CGPA 3.45',
+      description: 'Successfully achieved NAAC B+ grade with CGPA 3.45',
       icon: 'ri-medal-line'
     },
     {

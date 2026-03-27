@@ -95,20 +95,20 @@ export default function Footer({ enquiryOpen: externalEnquiryOpen, setEnquiryOpe
         </div>
       )}
 
-      <footer className="bg-slate-800 text-white">
+      <footer className="bg-purple-700 text-white">
         {/* CTA Strip */}
-        <div className="bg-sky-700 py-6 px-4">
+        <div className="bg-purple-800 py-6 px-4">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-center md:text-left">
               <span className="text-white font-semibold text-lg">Admissions Open 2025–26</span>
-              <span className="ml-3 bg-yellow-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full">
+              <span className="ml-3 bg-yellow-400 text-purple-900 text-xs font-bold px-3 py-1 rounded-full">
                 Counselling Code: 4946
               </span>
             </div>
             <div className="flex gap-3">
               <button onClick={() => { window.scrollTo({ top: 0, behavior: 'instant' }); navigate('/application'); }}
 
-                className="bg-white text-sky-700 px-5 py-2 rounded-md text-sm font-semibold hover:bg-sky-50 transition-colors cursor-pointer whitespace-nowrap">
+                className="bg-yellow-400 text-purple-900 px-5 py-2 rounded-md text-sm font-semibold hover:bg-yellow-300 transition-colors cursor-pointer whitespace-nowrap">
                 Apply Now
               </button>
               <button onClick={() => setEnquiryOpen(true)}
@@ -144,7 +144,7 @@ export default function Footer({ enquiryOpen: externalEnquiryOpen, setEnquiryOpe
                   { icon: 'ri-youtube-fill', href: 'https://youtube.com' },
                 ].map(({ icon, href }) => (
                   <a key={icon} href={href} target="_blank" rel="noopener noreferrer"
-                    className="w-8 h-8 flex items-center justify-center bg-slate-700 rounded-full hover:bg-sky-600 transition-colors cursor-pointer">
+                    className="w-8 h-8 flex items-center justify-center bg-purple-800 rounded-full hover:bg-yellow-400 hover:text-purple-900 transition-colors cursor-pointer">
                     <i className={`${icon} text-sm`}></i>
                   </a>
                 ))}
@@ -166,8 +166,8 @@ export default function Footer({ enquiryOpen: externalEnquiryOpen, setEnquiryOpe
                   { label: 'Gallery', path: '/gallery/images' },
                 ].map(({ label, path }) => (
                   <li key={path}>
-                    <Link to={path} className="text-slate-400 hover:text-sky-400 transition-colors flex items-center gap-1.5">
-                      <i className="ri-arrow-right-s-line text-sky-500 text-xs"></i>{label}
+                    <Link to={path} className="text-purple-100 hover:text-yellow-300 transition-colors flex items-center gap-1.5">
+                      <i className="ri-arrow-right-s-line text-yellow-400 text-xs"></i>{label}
                     </Link>
                   </li>
                 ))}
@@ -188,8 +188,8 @@ export default function Footer({ enquiryOpen: externalEnquiryOpen, setEnquiryOpe
                   { label: 'Science & Humanities', path: '/courses/science-humanities' },
                 ].map(({ label, path }) => (
                   <li key={path}>
-                    <Link to={path} className="text-slate-400 hover:text-sky-400 transition-colors flex items-center gap-1.5">
-                      <i className="ri-arrow-right-s-line text-sky-500 text-xs"></i>{label}
+                    <Link to={path} className="text-purple-100 hover:text-yellow-300 transition-colors flex items-center gap-1.5">
+                      <i className="ri-arrow-right-s-line text-yellow-400 text-xs"></i>{label}
                     </Link>
                   </li>
                 ))}
@@ -201,20 +201,20 @@ export default function Footer({ enquiryOpen: externalEnquiryOpen, setEnquiryOpe
               <h4 className="text-sm font-bold uppercase tracking-wider text-slate-300 mb-4">Contact Info</h4>
               <ul className="space-y-3 text-sm text-slate-400">
                 <li className="flex items-start gap-2">
-                  <i className="ri-map-pin-line text-sky-400 mt-0.5 flex-shrink-0"></i>
+                  <i className="ri-map-pin-line text-yellow-400 mt-0.5 flex-shrink-0"></i>
                   <span>Aralvaimozhi, Kanyakumari District,<br />Tamil Nadu – 629 301, India</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <i className="ri-phone-line text-sky-400 flex-shrink-0"></i>
-                  <a href="tel:+914651234567" className="hover:text-sky-400 transition-colors">+91 4651 234567</a>
+                  <i className="ri-phone-line text-yellow-400 flex-shrink-0"></i>
+                  <a href="tel:+914651234567" className="hover:text-yellow-300 transition-colors">+91 4651 234567</a>
                 </li>
                 <li className="flex items-center gap-2">
-                  <i className="ri-mail-line text-sky-400 flex-shrink-0"></i>
-                  <a href="mailto:info@dmiengg.edu.in" className="hover:text-sky-400 transition-colors">info@dmiengg.edu.in</a>
+                  <i className="ri-mail-line text-yellow-400 flex-shrink-0"></i>
+                  <a href="mailto:info@dmiengg.edu.in" className="hover:text-yellow-300 transition-colors">info@dmiengg.edu.in</a>
                 </li>
                 <li className="flex items-center gap-2">
-                  <i className="ri-global-line text-sky-400 flex-shrink-0"></i>
-                  <a href="https://dmiengg.edu.in" target="_blank" rel="noopener noreferrer" className="hover:text-sky-400 transition-colors">www.dmiengg.edu.in</a>
+                  <i className="ri-global-line text-yellow-400 flex-shrink-0"></i>
+                  <a href="https://dmiengg.edu.in" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition-colors">www.dmiengg.edu.in</a>
                 </li>
               </ul>
               <div className="mt-4 p-3 bg-slate-700 rounded-lg">
@@ -225,13 +225,13 @@ export default function Footer({ enquiryOpen: externalEnquiryOpen, setEnquiryOpe
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-slate-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+          <div className="border-t border-purple-500 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
             <p className="text-slate-400 text-xs">
               © 2025 DMI Engineering College. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-4 text-xs">
-              <Link to="/privacy-policy" className="text-slate-400 hover:text-sky-400 transition-colors">Privacy Policy</Link>
-              <a href="https://readdy.ai/?ref=logo" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-sky-400 transition-colors">
+              <Link to="/privacy-policy" className="text-slate-300 hover:text-yellow-300 transition-colors">Privacy Policy</Link>
+              <a href="https://readdy.ai/?ref=logo" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-yellow-300 transition-colors">
                 Powered by Readdy
               </a>
             </div>
