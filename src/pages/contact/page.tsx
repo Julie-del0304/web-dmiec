@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import Navbar from '../../../home/components/Navbar';
-import Footer from '../../../home/components/Footer';
+import Navbar from '../home/components/Navbar';
+import Footer from '../home/components/Footer';
 
 export default function ContactPage() {
   const [scrolled, setScrolled] = useState(false);
