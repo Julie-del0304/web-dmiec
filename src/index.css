@@ -66,3 +66,35 @@ body {
   background-color: #f8f8fa;
   padding-top: calc(var(--ticker-height, 0px) + var(--navbar-height, 0px));
 }
+
+@layer base {
+  /* Force legacy blue/gray utility text colors into the purple branding tone */
+  .text-slate-900,
+  .text-slate-800,
+  .text-slate-700,
+  .text-slate-600,
+  .text-gray-900,
+  .text-gray-800,
+  .text-gray-700,
+  .text-gray-600,
+  .text-sky-600,
+  .text-sky-500,
+  .text-teal-600,
+  .text-teal-500 {
+    color: #5a168f !important;
+  }
+
+  .bg-sky-600,
+  .bg-sky-500,
+  .bg-teal-600,
+  .bg-teal-500 {
+    background-color: #5a168f !important;
+  }
+
+  .border-sky-600,
+  .border-sky-500,
+  .border-teal-600,
+  .border-teal-500 {
+    border-color: #5a168f !important;
+  }
+}
