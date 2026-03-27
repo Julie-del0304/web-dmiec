@@ -103,7 +103,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-<<<<<<< HEAD
             {/* Contact Form */}
             <div>
               <h2 className="text-xl font-bold text-slate-800 mb-4">Send Us a Message</h2>
@@ -158,23 +157,9 @@ export default function ContactPage() {
                   </button>
                 </form>
               )}
-=======
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <i className="ri-phone-line text-2xl text-emerald-600"></i>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
-                <p className="text-gray-600">
-                  +91 4651 289 000<br />
-                  +91 9445970141
-                </p>
-              </div>
->>>>>>> 0da9a39cf9cf4044fc21b0e8a689ad17a76c670f
             </div>
           </div>
 
-<<<<<<< HEAD
           {/* Department Contacts */}
           <div className="mt-14">
             <h2 className="text-xl font-bold text-slate-800 mb-6">Department Contact Numbers</h2>
@@ -201,19 +186,6 @@ export default function ContactPage() {
                   </div>
                 </div>
               ))}
-=======
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-violet-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <i className="ri-mail-line text-2xl text-violet-600"></i>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
-                <p className="text-gray-600">
-                  info@dmiengg.edu.in<br />
-                  dmieckk@gmail.com
-                </p>
-              </div>
->>>>>>> 0da9a39cf9cf4044fc21b0e8a689ad17a76c670f
             </div>
           </div>
 
@@ -223,8 +195,16 @@ export default function ContactPage() {
             <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {/* Team Head */}
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 flex flex-col sm:flex-row hover:shadow-xl transition-shadow duration-300">
+<<<<<<< HEAD
+                <div className="sm:w-2/5 h-48 sm:h-auto bg-slate-50 overflow-hidden relative group">
+                  <img
+                    src="https://image2url.com/r2/default/images/1774624099082-2b22bf05-8191-44cf-94f1-57390ee036eb.jpg"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+=======
                 <div className="sm:w-2/5 h-48 sm:h-auto bg-slate-100 overflow-hidden text-center flex items-center justify-center">
                   <i className="ri-user-3-line text-6xl text-slate-300"></i>
+>>>>>>> e5f041c (Final launch-day updates)
                 </div>
                 <div className="p-6 sm:w-3/5 flex flex-col justify-center relative">
                   <div className="absolute top-4 right-6 w-8 h-8 bg-sky-500 rounded-lg flex items-center justify-center">
@@ -235,16 +215,28 @@ export default function ContactPage() {
                   <p className="text-slate-500 text-sm font-medium mb-4">III year CSE</p>
                   <div className="flex items-center gap-2 text-slate-400">
                     <i className="ri-mail-line"></i>
+<<<<<<< HEAD
+                    <span className="text-xs">arockia.juliya@gmail.com</span>
+=======
                     <span className="text-xs">arockia.juliya@dmiengg.edu.in</span>
+>>>>>>> e5f041c (Final launch-day updates)
                   </div>
                 </div>
               </div>
-<<<<<<< HEAD
 
               {/* Assistant Lead */}
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 flex flex-col sm:flex-row hover:shadow-xl transition-shadow duration-300">
+<<<<<<< HEAD
+                <div className="sm:w-2/5 h-48 sm:h-auto bg-slate-50 overflow-hidden relative group">
+                  <img
+                    src="https://image2url.com/r2/default/images/1774623101656-dd74dcd5-cb46-46c9-a286-01a8c28eded6.png"
+                    alt="Siva Marimuthu"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+=======
                 <div className="sm:w-2/5 h-48 sm:h-auto bg-slate-100 overflow-hidden text-center flex items-center justify-center">
                   <i className="ri-user-4-line text-6xl text-slate-300"></i>
+>>>>>>> e5f041c (Final launch-day updates)
                 </div>
                 <div className="p-6 sm:w-3/5 flex flex-col justify-center relative">
                   <div className="absolute top-4 right-6 w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
@@ -255,18 +247,13 @@ export default function ContactPage() {
                   <p className="text-slate-500 text-sm font-medium mb-4">III year CSE</p>
                   <div className="flex items-center gap-2 text-slate-400">
                     <i className="ri-mail-line"></i>
+<<<<<<< HEAD
+                    <span className="text-xs">siva.marimuthu@gmail.com</span>
+=======
                     <span className="text-xs">siva.marimuthu@dmiengg.edu.in</span>
+>>>>>>> e5f041c (Final launch-day updates)
                   </div>
                 </div>
-=======
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Office Hours</h3>
-                <p className="text-gray-600">
-                  Monday - Friday: 9:00 AM - 4:00 PM<br />
-                  Saturday: 9:00 AM - 3:00 PM<br />
-                  Sunday: Closed
-                </p>
->>>>>>> 0da9a39cf9cf4044fc21b0e8a689ad17a76c670f
               </div>
             </div>
           </div>
@@ -278,6 +265,33 @@ export default function ContactPage() {
               <div className="w-24 h-1.5 bg-gradient-to-r from-sky-600 to-emerald-500 mx-auto mb-6 rounded-full"></div>
             </div>
 
+<<<<<<< HEAD
+            <div className="grid lg:grid-cols-2 gap-8 mb-10">
+              {[
+                { name: "Asha", role: "Full Stack Developer", color: "text-emerald-600", bg: "bg-emerald-50", year: "III year CSE", email: "asha@gmail.com", image: "https://image2url.com/r2/default/images/1774623253224-da9b2b8e-ecc9-4738-a0dd-356d80c0c0ec.png" },
+                { name: "Abinsam", role: "Full Stack Developer", color: "text-emerald-600", bg: "bg-emerald-50", year: "III year CSE", email: "abinsam@gmail.com", image: "" },
+                { name: "Tony Blair Ubahara Wencislas", role: "Full Stack Developer", color: "text-emerald-600", bg: "bg-emerald-50", year: "II year CSE", email: "tonyblair09022006@gmail.com", image: "https://image2url.com/r2/default/images/1774623805145-6e1c73de-3314-4802-aa2a-b24c8cb40df1.png" },
+                { name: "k.Prathab", role: "UIUX", color: "text-emerald-600", bg: "bg-emerald-50", year: "II year CSE", email: "prathabk2006@gmail.com", image: "https://image2url.com/r2/default/images/1774620075843-c5710f8d-5742-41d3-b53b-a49a3a2adba2.png" },
+                { name: "Santhana Abisha", role: "Database Team", color: "text-amber-600", bg: "bg-amber-50", year: "II year CSE", email: "santhana.abisha@gmail.com", image: "https://image2url.com/r2/default/images/1774622405535-99df3fb5-0feb-4587-aac0-236305f4bac9.png" },
+                { name: "Veni", role: "Database Team", color: "text-amber-600", bg: "bg-amber-50", year: "II year CSE", email: "veni@gmail.com", image: "https://image2url.com/r2/default/images/1774623407980-037fede9-9798-4914-a5ee-d1ccf65db183.png" },
+                { name: "Nivi Darshini", role: "Database Team", color: "text-amber-600", bg: "bg-amber-50", year: "II year CSE", email: "nividashini@gmail.com", image: "https://image2url.com/r2/default/images/1774624215552-ae4e8ad1-ceb2-464d-ab76-602c9316d297.png" },
+                { name: "Priya", role: "Software Testing", color: "text-rose-600", bg: "bg-rose-50", year: "III year CSE", email: "priya@gmail.com", image: "https://image2url.com/r2/default/images/1774622884119-e4e0bfd0-0564-4386-afd9-1c07303a0904.png" },
+                { name: "Varsha", role: "Software Testing", color: "text-rose-600", bg: "bg-rose-50", year: "III year CSE", email: "varsha@gmail.com", image: "https://image2url.com/r2/default/images/1774623939853-5cc88293-48fe-4d5b-bab6-43f1560c2451.png" }
+              ].map((member, idx) => (
+                <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 flex flex-col sm:flex-row hover:shadow-md transition-shadow duration-300">
+                  <div className="sm:w-1/3 h-40 sm:h-auto bg-slate-50 flex items-center justify-center overflow-hidden">
+                    {(member as any).image && (
+                      <img src={(member as any).image} alt={member.name} className="w-full h-full object-cover" />
+                    )}
+                  </div>
+                  <div className="p-5 sm:w-2/3 flex flex-col justify-center">
+                    <h3 className="text-lg font-bold text-slate-800 mb-1 leading-tight">{member.name}</h3>
+                    <p className={`${member.color} font-bold text-[10px] uppercase tracking-wider mb-2`}>{member.role}</p>
+                    <p className="text-slate-500 text-xs font-medium mb-3">{member.year}</p>
+                    <div className="flex items-center gap-2 text-slate-400">
+                      <i className="ri-mail-line text-xs"></i>
+                      <span className="text-[10px] truncate">{member.email}</span>
+=======
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
               {[
                 { name: "Asha", role: "Full Stack Developer", color: "text-emerald-600", bg: "bg-emerald-50", image: "https://readdy.ai/api/search-image?query=engineering%20college%20students%20graduation%20ceremony%20celebration%20campus%20outdoor%20professional%20photography%20warm%20sunlight&width=1200&height=600&seq=news-fallback-1&orientation=landscape" },
@@ -302,6 +316,7 @@ export default function ContactPage() {
                     <h3 className="font-bold text-slate-800 mb-1">{member.name}</h3>
                     <div className={`inline-block px-3 py-1 rounded-full ${member.bg} ${member.color} text-[10px] font-bold uppercase tracking-wider`}>
                       {member.role}
+>>>>>>> e5f041c (Final launch-day updates)
                     </div>
                   </div>
                 </div>
