@@ -60,7 +60,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #4b0082;
+
 
   background-color: #f8f8fa;
   padding-top: calc(var(--ticker-height, 0px) + var(--navbar-height, 0px));
