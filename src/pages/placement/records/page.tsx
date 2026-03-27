@@ -148,7 +148,7 @@ export default function PlacementRecordsPage() {
         const workbook = XLSX.read(data, { type: 'array' });
         const sheet = workbook.Sheets[workbook.SheetNames[0]];
         // FIX: Use unknown[][] so parseStudentRows can do its own safe casting
-        const rows = XLSX.utils.sheet_to_json<unknown[]>(sheet, { header: 1 });
+        const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 }) as unknown[][];
         const students = parseStudentRows(rows);
         setYearDataMap((prev) => ({
           ...prev,
