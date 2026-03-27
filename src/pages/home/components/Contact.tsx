@@ -79,7 +79,7 @@ export default function Contact() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
                 <p className="text-gray-600">
                   +91 4651 289 000<br />
-                  +91 4651 289 001
+                  +91 9445970141
                 </p>
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function Contact() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
                 <p className="text-gray-600">
                   info@dmiengg.edu.in<br />
-                  admissions@dmiengg.edu.in
+                  dmieckk@gmail.com
                 </p>
               </div>
             </div>
@@ -104,8 +104,8 @@ export default function Contact() {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Office Hours</h3>
                 <p className="text-gray-600">
-                  Monday - Friday: 9:00 AM - 5:00 PM<br />
-                  Saturday: 9:00 AM - 1:00 PM<br />
+                  Monday - Friday: 9:00 AM - 4:00 PM<br />
+                  Saturday: 9:00 AM - 3:00 PM<br />
                   Sunday: Closed
                 </p>
               </div>
