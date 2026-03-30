@@ -80,7 +80,7 @@ const stats = [
   { value: '6', label: 'Engineering Departments', icon: 'ri-building-2-line' },
   { value: '70+', label: 'Expert Professors', icon: 'ri-user-star-line' },
   { value: '3000+', label: 'Graduates', icon: 'ri-graduation-cap-line' },
-  { value: 'B+', label: 'NAAC Grade', icon: 'ri-award-line' },
+  { value: 'B++', label: 'NAAC Grade', icon: 'ri-award-line' },
 ];
 
 function useInView(threshold = 0.15) {
