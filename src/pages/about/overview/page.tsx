@@ -124,7 +124,7 @@ export default function OverviewPage() {
                 className="rounded-2xl shadow-2xl w-full h-96 object-cover"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
-                <div className="text-4xl font-bold text-teal-600">B+</div>
+                <div className="text-4xl font-bold text-teal-600">B++</div>
                 <div className="text-sm text-gray-600 whitespace-nowrap">NAAC Accredited</div>
               </div>
             </div>
