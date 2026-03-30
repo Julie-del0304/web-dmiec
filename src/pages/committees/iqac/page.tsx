@@ -165,8 +165,8 @@ export default function IQACPage() {
   const achievements = [
     {
       year: '2023-24',
-      title: 'NAAC B++ Grade Accreditation',
-      description: 'Successfully achieved NAAC B++ grade with CGPA 3.45',
+      title: 'NAAC B++ NAAC GradeGrade Accreditation',
+      description: 'Successfully achieved NAAC B++ NAAC Gradegrade with CGPA 3.45',
       icon: 'ri-medal-line'
     },
     {
