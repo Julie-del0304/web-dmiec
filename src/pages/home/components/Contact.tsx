@@ -281,7 +281,7 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-      <Footer enquiryOpen={enquiryOpen} setEnquiryOpen={setEnquiryOpen} />
     </div>
+
   );
 }
