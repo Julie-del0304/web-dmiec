@@ -189,7 +189,7 @@ export default function Contact() {
                 <p className="text-slate-500 text-sm font-medium mb-4">III year CSE</p>
                 <div className="flex items-center gap-2 text-slate-400">
                   <i className="ri-mail-line"></i>
-                  <span className="text-xs">arockiajuliyaar@gmail.com</span>
+                  <span className="text-xs">arockia.juliya@gmail.com</span>
                 </div>
               </div>
             </div>
@@ -207,12 +207,12 @@ export default function Contact() {
                 <div className="absolute top-4 right-6 w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
                   <i className="ri-user-star-line text-white text-lg"></i>
                 </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-1">Siva Marimuthu.I</h3>
+                <h3 className="text-xl font-bold text-slate-800 mb-1">Siva Marimuthu</h3>
                 <p className="text-emerald-600 font-bold text-xs uppercase tracking-wider mb-3">Assistant Lead</p>
-                <p className="text-slate-500 text-sm font-medium mb-4">II year CSE</p>
+                <p className="text-slate-500 text-sm font-medium mb-4">III year CSE</p>
                 <div className="flex items-center gap-2 text-slate-400">
                   <i className="ri-mail-line"></i>
-                  <span className="text-xs">iyyappansivamarimuthu@gmail.com</span>
+                  <span className="text-xs">siva.marimuthu@gmail.com</span>
                 </div>
               </div>
             </div>
@@ -229,15 +229,15 @@ export default function Contact() {
           <div className="grid lg:grid-cols-2 gap-8 mb-10">
             {[
               { name: "Asha", role: "Full Stack Developer", color: "text-emerald-600", bg: "bg-emerald-50", year: "III year CSE", email: "asha@gmail.com", image: "https://image2url.com/r2/default/images/1774623253224-da9b2b8e-ecc9-4738-a0dd-356d80c0c0ec.png" },
-              { name: "Abinsam", role: "Full Stack Developer", color: "text-emerald-600", bg: "bg-emerald-50", year: "III year CSE", email: "abinsam@gmail.com", image: "https://image2url.com/r2/default/images/1775550792480-33448311-a065-4b42-8526-908a6607fef0.png" },
+              { name: "Abinsam", role: "Full Stack Developer", color: "text-emerald-600", bg: "bg-emerald-50", year: "III year CSE", email: "abinsam@gmail.com", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&h=500&auto=format&fit=crop" },
               { name: "Tony Blair Ubahara Wencislas", role: "Full Stack Developer", color: "text-emerald-600", bg: "bg-emerald-50", year: "II year CSE", email: "tonyblair09022006@gmail.com", image: "https://image2url.com/r2/default/images/1774623805145-6e1c73de-3314-4802-aa2a-b24c8cb40df1.png" },
               { name: "k.Prathab", role: "UIUX", color: "text-emerald-600", bg: "bg-emerald-50", year: "II year CSE", email: "prathabk2006@gmail.com", image: "https://image2url.com/r2/default/images/1774620075843-c5710f8d-5742-41d3-b53b-a49a3a2adba2.png" },
               { name: "Vinshy.L", role: "Database Team", color: "text-amber-600", bg: "bg-amber-50", year: "III year CSE", email: "vinshy2105@gmail.com", image: "https://image2url.com/r2/default/images/1774671315959-cbc7543e-8b19-4d54-a181-a4aafe4a1df9.jpeg" },
               { name: "Santhana Abisha", role: "Database Team", color: "text-amber-600", bg: "bg-amber-50", year: "II year CSE", email: "santhanaabisha@gmail.com", image: "https://image2url.com/r2/default/images/1774622405535-99df3fb5-0feb-4587-aac0-236305f4bac9.png" },
               { name: "Veni", role: "Database Team", color: "text-amber-600", bg: "bg-amber-50", year: "II year CSE", email: "veni@gmail.com", image: "https://image2url.com/r2/default/images/1774623407980-037fede9-9798-4914-a5ee-d1ccf65db183.png" },
               { name: "Nivi Darshini", role: "Database Team", color: "text-amber-600", bg: "bg-amber-50", year: "II year CSE", email: "nividashini@gmail.com", image: "https://image2url.com/r2/default/images/1774624215552-ae4e8ad1-ceb2-464d-ab76-602c9316d297.png" },
-              { name: "ShanmugaPriya", role: "Software Testing", color: "text-rose-600", bg: "bg-rose-50", year: "III year CSE", email: "priya@gmail.com", image: "https://image2url.com/r2/default/images/1774622884119-e4e0bfd0-0564-4386-afd9-1c07303a0904.png" },
-              { name: "Varsha.S", role: "Software Testing", color: "text-rose-600", bg: "bg-rose-50", year: "III year CSE", email: "varsha@gmail.com", image: "https://image2url.com/r2/default/images/1774623939853-5cc88293-48fe-4d5b-bab6-43f1560c2451.png" }
+              { name: "Priya", role: "Software Testing", color: "text-rose-600", bg: "bg-rose-50", year: "III year CSE", email: "priya@gmail.com", image: "https://image2url.com/r2/default/images/1774622884119-e4e0bfd0-0564-4386-afd9-1c07303a0904.png" },
+              { name: "Varsha", role: "Software Testing", color: "text-rose-600", bg: "bg-rose-50", year: "III year CSE", email: "varsha@gmail.com", image: "https://image2url.com/r2/default/images/1774623939853-5cc88293-48fe-4d5b-bab6-43f1560c2451.png" }
             ].map((member, idx) => (
               <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 flex flex-col sm:flex-row hover:shadow-md transition-shadow duration-300">
                 <div className="sm:w-1/3 h-40 sm:h-auto bg-slate-50 flex items-center justify-center overflow-hidden">

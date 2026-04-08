@@ -366,9 +366,9 @@ const StartupPage = () => {
                 Join our startup ecosystem and get access to mentorship, funding, and resources to turn your innovative ideas into successful ventures.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <button className="px-8 py-3 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-colors whitespace-nowrap">
+                <button onClick={() => window.open('https://admissions.dmifoundations.org/dmi-engineering-college-application-form', '_blank')} className="px-8 py-3 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-colors whitespace-nowrap">
                   <i className="ri-file-text-line mr-2"></i>
-                  Apply Now
+                  Admission 2026-27
                 </button>
                 <button className="px-8 py-3 bg-blue-700 text-white rounded-lg font-medium hover:bg-blue-800 transition-colors whitespace-nowrap border border-blue-500">
                   <i className="ri-phone-line mr-2"></i>

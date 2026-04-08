@@ -95,11 +95,11 @@ Software Testing:
                 {item.label === 'Project Team' ? (
                   <div className="text-sm leading-5 text-left max-w-xs mx-auto">
                     <p><strong className="text-slate-700">Team Lead:</strong> Arockia Juliya A.R</p>
-                    <p><strong className="text-slate-700">Assistant Lead:</strong> Siva Marimuthu.I</p>
+                    <p><strong className="text-slate-700">Assistant Lead:</strong> Siva Marimuthu</p>
 
                     <p className="mt-2 font-semibold text-slate-700">Full Stack:</p>
                     <ul className="list-disc ml-5 text-slate-500">
-                      <li>Asha Lidiya</li>
+                      <li>Asha</li>
                       <li>Abinsam</li>
                       <li>Tony Blair Ubahara Wencislas</li>
                     </ul>
@@ -112,7 +112,7 @@ Software Testing:
 
                     <p className="mt-2 font-semibold text-slate-700">Software Testing:</p>
                     <ul className="list-disc ml-5 text-slate-500">
-                      <li>Shanmuga Priya</li>
+                      <li>Priya</li>
                       <li>Varsha</li>
                     </ul>
                   </div>

@@ -13,17 +13,18 @@ interface NewsEvent {
 
 interface PlacementSlide {
   id: string;
-  name: string;
-  branch: string;
-  company: string;
+  name?: string;
+  branch?: string;
+  company?: string;
+  title?: string;
+  date?: string;
   image_url: string;
+  description?: string;
+  tag?: string;
   display_order: number;
 }
 
 const YOUTUBE_CHANNEL = 'https://youtube.com/@dmieckk?si=tE035utgahjeYZno';
-
-const newsTags = ['Placement', 'Achievement', 'Award', 'Certification', 'Research'];
-const eventTags = ['Symposium', 'Hackathon', 'Sports Day', 'Cultural', 'Paper Presentation', 'Workshop'];
 
 function detectTag(title: string): string {
   const t = title.toLowerCase();
@@ -40,29 +41,38 @@ function detectTag(title: string): string {
 }
 
 const tagColors: Record<string, { bg: string; color: string }> = {
-  Placement:         { bg: '#dbeafe', color: '#1d4ed8' },
-  Achievement:       { bg: '#dcfce7', color: '#15803d' },
-  Award:             { bg: '#fef9c3', color: '#854d0e' },
-  Certification:     { bg: '#f3e8ff', color: '#7e22ce' },
-  Research:          { bg: '#e0f2fe', color: '#0369a1' },
-  Hackathon:         { bg: '#ede9fe', color: '#6d28d9' },
-  Symposium:         { bg: '#ccfbf1', color: '#0f766e' },
-  'Sports Day':      { bg: '#fee2e2', color: '#b91c1c' },
-  Cultural:          { bg: '#fce7f3', color: '#9d174d' },
+  Placement:            { bg: '#dbeafe', color: '#1d4ed8' },
+  Achievement:          { bg: '#dcfce7', color: '#15803d' },
+  Award:                { bg: '#fef9c3', color: '#854d0e' },
+  Certification:        { bg: '#f3e8ff', color: '#7e22ce' },
+  Research:             { bg: '#e0f2fe', color: '#0369a1' },
+  Internship:           { bg: '#ecfdf5', color: '#065f46' },
+  Hackathon:            { bg: '#ede9fe', color: '#6d28d9' },
+  Symposium:            { bg: '#ccfbf1', color: '#0f766e' },
+  'Sports Day':         { bg: '#fee2e2', color: '#b91c1c' },
+  Cultural:             { bg: '#fce7f3', color: '#9d174d' },
   'Paper Presentation': { bg: '#ffedd5', color: '#c2410c' },
-  Workshop:          { bg: '#e0f2fe', color: '#0369a1' },
+  Workshop:             { bg: '#e0f2fe', color: '#0369a1' },
+  Seminar:              { bg: '#f0fdf4', color: '#166534' },
+  Competition:          { bg: '#fff7ed', color: '#9a3412' },
 };
 
 // ── Column component ──────────────────────────────────────────────────────
 interface ColumnProps {
   title: string;
   accentColor: string;
-  items: { id: string; image_url?: string; title?: string; name?: string; description?: string; date?: string; tag?: string; branch?: string; company?: string }[];
+  items: {
+    id: string;
+    image_url?: string;
+    title?: string;
+    description?: string;
+    date?: string;
+    tag?: string;
+  }[];
   loading: boolean;
-  type: 'news' | 'placement';
 }
 
-function SlideColumn({ title, accentColor, items, loading, type }: ColumnProps) {
+function SlideColumn({ title, accentColor, items, loading }: ColumnProps) {
   const [current, setCurrent] = useState(0);
   const [fade, setFade] = useState(true);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -128,7 +138,7 @@ function SlideColumn({ title, accentColor, items, loading, type }: ColumnProps) 
               {item?.image_url ? (
                 <img
                   src={item.image_url}
-                  alt={item.title || item.name || ''}
+                  alt={item.title || ''}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
                 />
               ) : (
@@ -191,22 +201,15 @@ function SlideColumn({ title, accentColor, items, loading, type }: ColumnProps) 
               letterSpacing: '0.05em',
             }}>{tag}</div>
 
-            {/* Title / Name */}
+            {/* Title */}
             <p style={{ fontSize: 15, fontWeight: 700, color: '#0f172a', margin: '0 0 6px', lineHeight: 1.4 }}>
-              {type === 'placement' ? item?.name : item?.title}
+              {item?.title}
             </p>
 
             {/* Description */}
-            {type === 'placement' ? (
-              <div>
-                <p style={{ fontSize: 13, color: '#2563eb', fontWeight: 600, margin: '0 0 4px' }}>{item?.branch}</p>
-                <p style={{ fontSize: 13, color: '#475569', margin: 0 }}>Placed at <strong style={{ color: '#1d4ed8' }}>{item?.company}</strong></p>
-              </div>
-            ) : (
-              <p style={{ fontSize: 13, color: '#475569', margin: 0, lineHeight: 1.6 }}>
-                {item?.description || item?.title}
-              </p>
-            )}
+            <p style={{ fontSize: 13, color: '#475569', margin: 0, lineHeight: 1.6 }}>
+              {item?.description}
+            </p>
 
             {/* Date */}
             {item?.date && (
@@ -226,9 +229,9 @@ function SlideColumn({ title, accentColor, items, loading, type }: ColumnProps) 
 
 // ── Main component ────────────────────────────────────────────────────────
 export default function NewsEvents() {
-  const [events, setEvents]           = useState<NewsEvent[]>([]);
+  const [events, setEvents]               = useState<NewsEvent[]>([]);
   const [eventsLoading, setEventsLoading] = useState(true);
-  const [placements, setPlacements]   = useState<PlacementSlide[]>([]);
+  const [placements, setPlacements]       = useState<PlacementSlide[]>([]);
   const [placementsLoading, setPlacementsLoading] = useState(true);
 
   useEffect(() => {
@@ -267,19 +270,35 @@ export default function NewsEvents() {
 
         {/* Two columns */}
         <div className="ne-cols" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+
+          {/* News & Achievements column */}
           <SlideColumn
             title="News & Achievements"
             accentColor="#2563eb"
-            items={placements.map(p => ({ ...p, title: p.name, description: `Placed at ${p.company}`, tag: 'Placement' }))}
+            items={placements.map(p => ({
+              id: p.id,
+              image_url: p.image_url,
+              title: p.title || p.name,       // DB title, fallback to old name
+              description: p.description,     // DB description as-is
+              tag: p.tag || 'Achievement',    // DB tag, fallback Achievement
+              date: p.date,
+            }))}
             loading={placementsLoading}
-            type="placement"
           />
+
+          {/* Events & Programs column */}
           <SlideColumn
             title="Events & Programs"
             accentColor="#f59e0b"
-            items={events.map(e => ({ ...e }))}
+            items={events.map(e => ({
+              id: e.id,
+              image_url: e.image_url,
+              title: e.title,
+              description: e.description,
+              tag: e.tag,
+              date: e.date,
+            }))}
             loading={eventsLoading}
-            type="news"
           />
         </div>
 

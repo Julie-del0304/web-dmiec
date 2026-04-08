@@ -81,13 +81,13 @@ export default function Admissions() {
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <span className="text-navy-600 font-semibold text-sm uppercase tracking-wider">Join Us</span>
           <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mt-3">
-            <strong>Admissions 2025-26</strong>
+            <strong>Admissions 2026-27</strong>
           </h2>
           <p className="text-slate-600 text-base mt-4 max-w-2xl mx-auto">
             Begin your journey towards becoming a successful engineer at DMI Engineering College
           </p>
           <div className="w-24 h-1 bg-navy-600 mx-auto mt-6"></div>
-          
+
           {/* Counseling Code Highlight */}
           <div className="mt-8 inline-block bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-4 rounded-xl shadow-lg">
             <div className="flex items-center justify-center space-x-3">
@@ -152,19 +152,19 @@ export default function Admissions() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center border-b border-white/20 pb-3">
                   <span className="font-medium">Application Start</span>
-                  <span className="font-bold">April 1, 2026</span>
+                  <span className="font-bold">Now on wards</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-white/20 pb-3">
                   <span className="font-medium">Application Deadline</span>
-                  <span className="font-bold">June 15, 2026</span>
+                  <span className="font-bold">July 15, 2026</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-white/20 pb-3">
                   <span className="font-medium">Entrance Test</span>
-                  <span className="font-bold">June 20-26, 2026</span>
+                  <span className="font-bold">July 20-25, 2026</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="font-medium">Classes Begin</span>
-                  <span className="font-bold">July 15, 2026</span>
+                  <span className="font-bold">August 5, 2026</span>
                 </div>
               </div>
             </div>
@@ -194,7 +194,7 @@ export default function Admissions() {
                     </li>
                     <li className="flex items-start">
                       <i className="ri-checkbox-circle-fill text-navy-600 mr-2 mt-0.5"></i>
-                      <span>Age limit: 17-25 years as on December 31, 2026</span>
+                      <span>Age limit: 17-25 years as on December 31, 2025</span>
                     </li>
                   </ul>
                 </div>
@@ -242,7 +242,7 @@ export default function Admissions() {
                 </div>
                 <div className="flex items-center">
                   <i className="ri-government-line text-emerald-600 text-xl mr-3"></i>
-                  <span className="text-slate-700 text-sm"><strong>Government Schemes</strong> - SC/ST/OBC scholarships</span>
+                  <span className="text-slate-700 text-sm"><strong>Government Schemes</strong> - SC/ST/OBC/PMSS scholarships</span>
                 </div>
               </div>
             </div>
@@ -252,20 +252,20 @@ export default function Admissions() {
         <div className={`bg-navy-900 rounded-2xl p-8 md:p-12 text-center transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           <h3 className="text-3xl font-bold text-white mb-4">Ready to Start Your Engineering Journey?</h3>
           <p className="text-white/80 text-base mb-8 max-w-2xl mx-auto">
-            Take the first step towards a successful career in engineering. Apply now and join our community of future innovators.
+            Take the first step towards a successful career in engineering. Admission 2026-27 and join our community of future innovators.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/application" onClick={() => { window.scrollTo({ top: 0, behavior: 'instant' }); }}
+            <a href="https://admissions.dmifoundations.org/dmi-engineering-college-application-form" target="_blank" rel="noopener noreferrer"
               className="bg-sky-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-sky-700 transition-colors whitespace-nowrap cursor-pointer inline-block">
-              Apply Online
-            </Link>
-            <button 
+              Admission 2026-27
+            </a>
+            <button
               onClick={() => setShowEnquireModal(true)}
               className="bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors whitespace-nowrap cursor-pointer"
             >
               Enquire Now
             </button>
-            <button 
+            <button
               onClick={handleDownloadBrochure}
               className="bg-white/10 backdrop-blur-sm text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors border border-white/30 whitespace-nowrap cursor-pointer"
             >

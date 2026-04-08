@@ -45,7 +45,7 @@ export default function GoverningCouncilPage() {
       qualification: 'Ph.D., Former Vice Chancellor',
       organization: 'Anna University',
       expertise: 'Academic Administration & Quality Assurance',
-      image: 'https://readdy.ai/api/search-image?query=senior%20indian%20academic%20expert%20professor%20in%20formal%20attire%2C%20professional%20portrait%2C%20university%20setting%2C%20distinguished%20appearance%2C%20professional%20photography&width=300&height=350&seq=council-member-001&orientation=portrait'
+      image: 'https://media.licdn.com/dms/image/v2/C5103AQHyD1VA9VUp_w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1572521409356?e=2147483647&v=beta&t=Z1X0d4Iw-DtGWhIV0DAHAYooWpK790izO4s3c5UMAyE'
     },
     {
       name: 'Mr. S. Krishnan',
