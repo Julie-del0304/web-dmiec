@@ -17,10 +17,22 @@ function App() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Prevent Ctrl + '+', '-', '0'
+      // Prevent Ctrl + '+', '-', '0' (Zoom)
       if (e.ctrlKey && (e.key === '=' || e.key === '-' || e.key === '0' || e.key === '+')) {
         e.preventDefault();
       }
+      // Prevent F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C (DevTools)
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+        (e.ctrlKey && e.key === 'u') // Prevent Ctrl+U (View Source)
+      ) {
+        e.preventDefault();
+      }
+    };
+
+    const handleContextMenu = (e: MouseEvent) => {
+      e.preventDefault();
     };
 
     const handleWheel = (e: WheelEvent) => {
@@ -31,10 +43,12 @@ function App() {
     };
 
     window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('contextmenu', handleContextMenu);
     window.addEventListener('wheel', handleWheel, { passive: false });
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('contextmenu', handleContextMenu);
       window.removeEventListener('wheel', handleWheel);
     };
   }, []);

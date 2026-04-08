@@ -376,7 +376,7 @@ const StartupPage = () => {
         )}
       </div>
 
-      <Footer enquiryOpen={enquiryOpen} setEnquiryOpen={setEnquiryOpen} />
+      <Footer />
     </div>
   );
 };
