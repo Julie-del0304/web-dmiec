@@ -90,7 +90,7 @@ export default function Hero() {
         }
 
         .hero-btn {
-          flex: 1 1 0;
+          flex: 1;
           min-width: 0;
           padding: 12px 10px;
           border-radius: 14px;
@@ -218,10 +218,10 @@ export default function Hero() {
               width: "100%",
               padding: "0 20px",
               boxSizing: "border-box",
-              maxWidth: "360px",
+              maxWidth: "460px",
             }}>
-              <button className="hero-btn hero-btn-primary" onClick={() => scrollToSection("admissions")}>
-                <i className="ri-edit-box-line"></i>Apply Now
+              <button className="hero-btn hero-btn-primary" onClick={() => window.open('https://admissions.dmifoundations.org/dmi-engineering-college-application-form', '_blank')}>
+                <i className="ri-edit-box-line"></i>Admissions 2026-27
               </button>
               <button className="hero-btn hero-btn-secondary" onClick={() => scrollToSection("virtual-tour")}>
                 <i className="ri-video-line"></i>Virtual Tour

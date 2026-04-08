@@ -61,10 +61,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #5a168f;
-
-
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   background-color: #f8f8fa;
   padding-top: calc(var(--ticker-height, 0px) + var(--navbar-height, 0px));
+}
+
+img {
+  pointer-events: none;
 }
 
 @layer base {
@@ -96,5 +102,14 @@ body {
   .border-teal-600,
   .border-teal-500 {
     border-color: #5a168f !important;
+  }
+}
+
+/* Force 90% zoom on desktop view and ensure it fits the screen */
+@media screen and (min-width: 1024px) {
+  body {
+    zoom: 0.9;
+    width: 100%;
+    min-height: 100vh;
   }
 }

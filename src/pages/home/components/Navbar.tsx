@@ -307,7 +307,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
           </div>
 
           <button
-            onClick={() => { window.scrollTo({ top: 0, behavior: 'instant' }); navigate('/application'); }}
+            onClick={() => { window.open('https://admissions.dmifoundations.org/dmi-engineering-college-application-form', '_blank'); }}
             className="relative flex items-center gap-1.5 rounded-full px-3 py-1.5 cursor-pointer overflow-hidden"
             style={{ background: 'linear-gradient(135deg, #ca8a04, #eab308)', border: 'none', boxShadow: '0 0 12px 3px rgba(202,138,4,0.4)' }}>
             <span className="absolute inset-0 pointer-events-none" style={{
@@ -316,7 +316,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
             }} />
             <i className="ri-graduation-cap-fill text-black text-sm relative z-10"></i>
             <span className="text-sm font-bold text-black whitespace-nowrap relative z-10">
-              Admissions
+              Admissions 2026-27
             </span>
           </button>
         </div>
@@ -424,7 +424,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
               Counseling Code: <strong style={{ color: '#fde047' }}>4946</strong>
             </div>
             <div
-              onClick={() => { navigate('/application'); setMobileMenuOpen(false); }}
+              onClick={() => { window.open('https://admissions.dmifoundations.org/dmi-engineering-college-application-form', '_blank'); setMobileMenuOpen(false); }}
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '6px',
                 height: '32px', padding: '0 12px', borderRadius: '999px',
@@ -434,7 +434,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
                 cursor: 'pointer',
               }}>
               <i className="ri-graduation-cap-fill" style={{ fontSize: 13 }}></i>
-              Admissions
+              Admissions 2026-27
             </div>
           </div>
 

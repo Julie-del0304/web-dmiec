@@ -17,7 +17,6 @@ import Footer from './components/Footer';
 
 export default function HomePage() {
   const [scrolled, setScrolled] = useState(false);
-  const [enquiryOpen, setEnquiryOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -45,7 +44,7 @@ export default function HomePage() {
         <VirtualTour />
         <Contact />
       </main>
-      <Footer enquiryOpen={enquiryOpen} setEnquiryOpen={setEnquiryOpen} />
+      <Footer />
     </div>
   );
 }

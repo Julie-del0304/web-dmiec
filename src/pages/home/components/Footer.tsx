@@ -1,100 +1,11 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-interface FooterProps {
-  enquiryOpen?: boolean;
-  setEnquiryOpen?: (open: boolean) => void;
-}
-
-export default function Footer({ enquiryOpen: externalEnquiryOpen, setEnquiryOpen: externalSetEnquiryOpen }: FooterProps) {
+export default function Footer() {
   const navigate = useNavigate();
-  const [internalEnquiryOpen, setInternalEnquiryOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', program: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-
-  const enquiryOpen = externalEnquiryOpen !== undefined ? externalEnquiryOpen : internalEnquiryOpen;
-  const setEnquiryOpen = externalSetEnquiryOpen || setInternalEnquiryOpen;
-
-  const handleEnquirySubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmitting(true);
-    const form = e.currentTarget;
-    const data = new URLSearchParams();
-    new FormData(form).forEach((v, k) => data.append(k, v.toString()));
-    try {
-      await fetch('https://readdy.ai/api/form/d6g09lgr225iqdhs0hcg', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: data.toString(),
-      });
-      setSubmitted(true);
-    } catch {
-      setSubmitted(true);
-    } finally {
-      setSubmitting(false);
-    }
-  };
 
   return (
     <>
-      {/* Enquiry Modal */}
-      {enquiryOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 px-4">
-          <div className="bg-white rounded-xl shadow-2xl w-full max-w-md p-6 relative">
-            <button onClick={() => { setEnquiryOpen(false); setSubmitted(false); setFormData({ name: '', email: '', phone: '', program: '', message: '' }); }}
-              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-700 cursor-pointer">
-              <i className="ri-close-line text-xl"></i>
-            </button>
-            {submitted ? (
-              <div className="text-center py-8">
-                <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
-                  <i className="ri-check-line text-3xl text-green-600"></i>
-                </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-2">Enquiry Submitted!</h3>
-                <p className="text-slate-500 text-sm">We'll get back to you within 24 hours.</p>
-                <button onClick={() => { setEnquiryOpen(false); setSubmitted(false); }}
-                  className="mt-6 bg-sky-600 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-sky-700 cursor-pointer whitespace-nowrap">
-                  Close
-                </button>
-              </div>
-            ) : (
-              <>
-                <h3 className="text-xl font-bold text-slate-800 mb-1">Enquire Now</h3>
-                <p className="text-slate-500 text-sm mb-5">Fill in your details and we'll contact you shortly.</p>
-                <form data-readdy-form onSubmit={handleEnquirySubmit} className="space-y-3">
-                  <input name="name" placeholder="Full Name" value={formData.name}
-                    onChange={e => setFormData(p => ({ ...p, name: e.target.value }))}
-                    className="w-full border border-slate-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300" />
-                  <input name="email" type="email" placeholder="Email Address" value={formData.email}
-                    onChange={e => setFormData(p => ({ ...p, email: e.target.value }))}
-                    className="w-full border border-slate-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300" />
-                  <input name="phone" placeholder="Phone Number" value={formData.phone}
-                    onChange={e => setFormData(p => ({ ...p, phone: e.target.value }))}
-                    className="w-full border border-slate-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300" />
-                  <select name="program" value={formData.program}
-                    onChange={e => setFormData(p => ({ ...p, program: e.target.value }))}
-                    className="w-full border border-slate-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300 text-slate-600">
-                    <option value="">Select Program of Interest</option>
-                    <option>CSE</option><option>IT</option><option>AI &amp; DS</option>
-                    <option>ECE</option><option>EEE</option><option>Mechanical</option>
-                    <option>Science &amp; Humanities</option>
-                  </select>
-                  <textarea name="message" placeholder="Your Message (optional)" rows={3}
-                    maxLength={500} value={formData.message}
-                    onChange={e => setFormData(p => ({ ...p, message: e.target.value }))}
-                    className="w-full border border-slate-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300 resize-none" />
-                  <button type="submit" disabled={submitting}
-                    className="w-full bg-sky-600 text-white py-2.5 rounded-md text-sm font-medium hover:bg-sky-700 transition-colors cursor-pointer disabled:opacity-60 whitespace-nowrap">
-                    {submitting ? 'Submitting...' : 'Submit Enquiry'}
-                  </button>
-                </form>
-              </>
-            )}
-          </div>
-        </div>
-      )}
-
       <footer className="bg-purple-700 text-white">
         {/* CTA Strip */}
         <div className="bg-purple-800 py-6 px-4">
@@ -106,14 +17,9 @@ export default function Footer({ enquiryOpen: externalEnquiryOpen, setEnquiryOpe
               </span>
             </div>
             <div className="flex gap-3">
-              <button onClick={() => { window.scrollTo({ top: 0, behavior: 'instant' }); navigate('/application'); }}
-
+              <button onClick={() => window.open('https://admissions.dmifoundations.org/dmi-engineering-college-application-form', '_blank')}
                 className="bg-yellow-400 text-purple-900 px-5 py-2 rounded-md text-sm font-semibold hover:bg-yellow-300 transition-colors cursor-pointer whitespace-nowrap">
-                Apply Now
-              </button>
-              <button onClick={() => setEnquiryOpen(true)}
-                className="border border-white text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-white/10 transition-colors cursor-pointer whitespace-nowrap">
-                Enquire Now
+                Admissions 2026-27
               </button>
             </div>
           </div>
