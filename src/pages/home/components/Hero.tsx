@@ -220,8 +220,8 @@ export default function Hero() {
               boxSizing: "border-box",
               maxWidth: "360px",
             }}>
-              <button className="hero-btn hero-btn-primary" onClick={() => scrollToSection("admissions")}>
-                <i className="ri-edit-box-line"></i>Apply Now
+              <button className="hero-btn hero-btn-primary" onClick={() => window.open('https://admissions.dmifoundations.org/dmi-engineering-college-application-form', '_blank')}>
+                <i className="ri-edit-box-line"></i>Admission 2026-27
               </button>
               <button className="hero-btn hero-btn-secondary" onClick={() => scrollToSection("virtual-tour")}>
                 <i className="ri-video-line"></i>Virtual Tour

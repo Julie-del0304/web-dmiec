@@ -229,7 +229,7 @@ export default function Contact() {
           <div className="grid lg:grid-cols-2 gap-8 mb-10">
             {[
               { name: "Asha", role: "Full Stack Developer", color: "text-emerald-600", bg: "bg-emerald-50", year: "III year CSE", email: "asha@gmail.com", image: "https://image2url.com/r2/default/images/1774623253224-da9b2b8e-ecc9-4738-a0dd-356d80c0c0ec.png" },
-              { name: "Abinsam", role: "Full Stack Developer", color: "text-emerald-600", bg: "bg-emerald-50", year: "III year CSE", email: "abinsam@gmail.com", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&h=500&auto=format&fit=crop" },
+              { name: "Abinsam", role: "Full Stack Developer", color: "text-emerald-600", bg: "bg-emerald-50", year: "III year CSE", email: "abinsam@gmail.com", image: "https://cdn.phototourl.com/free/2026-04-07-175cc35e-d38c-4f6a-9b6a-759a364ed5ca.jpg" },
               { name: "Tony Blair Ubahara Wencislas", role: "Full Stack Developer", color: "text-emerald-600", bg: "bg-emerald-50", year: "II year CSE", email: "tonyblair09022006@gmail.com", image: "https://image2url.com/r2/default/images/1774623805145-6e1c73de-3314-4802-aa2a-b24c8cb40df1.png" },
               { name: "k.Prathab", role: "UIUX", color: "text-emerald-600", bg: "bg-emerald-50", year: "II year CSE", email: "prathabk2006@gmail.com", image: "https://image2url.com/r2/default/images/1774620075843-c5710f8d-5742-41d3-b53b-a49a3a2adba2.png" },
               { name: "Vinshy.L", role: "Database Team", color: "text-amber-600", bg: "bg-amber-50", year: "III year CSE", email: "vinshy2105@gmail.com", image: "https://image2url.com/r2/default/images/1774671315959-cbc7543e-8b19-4d54-a181-a4aafe4a1df9.jpeg" },
