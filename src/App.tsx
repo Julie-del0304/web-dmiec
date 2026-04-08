@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { AppRoutes } from './router';
 import { useState, useEffect } from 'react';
 import SplashScreen from './components/SplashScreen';
-import FloatingActionWidget from './components/feature/FloatingActionWidget';
+
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -49,7 +49,7 @@ function App() {
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
       <BrowserRouter basename={__BASE_PATH__}>
         <AppRoutes />
-        <FloatingActionWidget />
+
       </BrowserRouter>
     </>
   );

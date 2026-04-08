@@ -106,10 +106,9 @@ export default function Footer({ enquiryOpen: externalEnquiryOpen, setEnquiryOpe
               </span>
             </div>
             <div className="flex gap-3">
-              <button onClick={() => { window.scrollTo({ top: 0, behavior: 'instant' }); navigate('/application'); }}
-
+              <button onClick={() => window.open('https://admissions.dmifoundations.org/dmi-engineering-college-application-form', '_blank')}
                 className="bg-yellow-400 text-purple-900 px-5 py-2 rounded-md text-sm font-semibold hover:bg-yellow-300 transition-colors cursor-pointer whitespace-nowrap">
-                Admission 2026-27
+                Admissions 2026-27
               </button>
               <button onClick={() => setEnquiryOpen(true)}
                 className="border border-white text-white px-5 py-2 rounded-md text-sm font-semibold hover:bg-white/10 transition-colors cursor-pointer whitespace-nowrap">

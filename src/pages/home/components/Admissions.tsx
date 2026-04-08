@@ -148,23 +148,23 @@ export default function Admissions() {
             </div>
 
             <div className="bg-gradient-to-br from-navy-700 to-navy-900 rounded-xl shadow-lg p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Important Dates 2026-27</h3>
+              <h3 className="text-2xl font-bold mb-4">Important Dates 2025-26</h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center border-b border-white/20 pb-3">
                   <span className="font-medium">Application Start</span>
-                  <span className="font-bold">Now on wards</span>
+                  <span className="font-bold">May 1, 2025</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-white/20 pb-3">
                   <span className="font-medium">Application Deadline</span>
-                  <span className="font-bold">July 15, 2026</span>
+                  <span className="font-bold">July 15, 2025</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-white/20 pb-3">
                   <span className="font-medium">Entrance Test</span>
-                  <span className="font-bold">July 20-25, 2026</span>
+                  <span className="font-bold">July 20-25, 2025</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="font-medium">Classes Begin</span>
-                  <span className="font-bold">August 5, 2026</span>
+                  <span className="font-bold">August 15, 2025</span>
                 </div>
               </div>
             </div>
@@ -242,7 +242,7 @@ export default function Admissions() {
                 </div>
                 <div className="flex items-center">
                   <i className="ri-government-line text-emerald-600 text-xl mr-3"></i>
-                  <span className="text-slate-700 text-sm"><strong>Government Schemes</strong> - SC/ST/OBC/PMSS scholarships</span>
+                  <span className="text-slate-700 text-sm"><strong>Government Schemes</strong> - SC/ST/OBC scholarships</span>
                 </div>
               </div>
             </div>
@@ -252,12 +252,12 @@ export default function Admissions() {
         <div className={`bg-navy-900 rounded-2xl p-8 md:p-12 text-center transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           <h3 className="text-3xl font-bold text-white mb-4">Ready to Start Your Engineering Journey?</h3>
           <p className="text-white/80 text-base mb-8 max-w-2xl mx-auto">
-            Take the first step towards a successful career in engineering. Admission 2026-27 and join our community of future innovators.
+            Take the first step towards a successful career in engineering. Admissions 2026-27 and join our community of future innovators.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="https://admissions.dmifoundations.org/dmi-engineering-college-application-form" target="_blank" rel="noopener noreferrer"
               className="bg-sky-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-sky-700 transition-colors whitespace-nowrap cursor-pointer inline-block">
-              Admission 2026-27
+              Admissions 2026-27
             </a>
             <button
               onClick={() => setShowEnquireModal(true)}

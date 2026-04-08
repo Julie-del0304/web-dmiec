@@ -5,7 +5,7 @@ import ProtectedRoute from '../components/ProtectedRoute';
 const HomePage = lazy(() => import('../pages/home/page'));
 const ClubDetailPage = lazy(() => import('../pages/co-curricular/clubs/[slug]/page'));
 const NotFound = lazy(() => import('../pages/NotFound'));
-const ApplicationPage = lazy(() => import('../pages/application/page'));
+
 const EventsPage = lazy(() => import('../pages/events/page'));
 const EventGalleryPage = lazy(() => import('../pages/events/gallery/page'));
 const ResearchPage = lazy(() => import('../pages/research/page'));
@@ -89,7 +89,7 @@ const ContactPage = lazy(() => import('../pages/contact/page'));
 
 const routes: RouteObject[] = [
   { path: '/', element: <HomePage /> },
-  { path: '/application', element: <ApplicationPage /> },
+
   { path: '/events', element: <EventsPage /> },
   { path: '/events/:folderId', element: <EventGalleryPage /> },
   { path: '/research', element: <ResearchPage /> },

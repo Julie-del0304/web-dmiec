@@ -163,7 +163,7 @@ const StartupPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar scrolled={scrolled} />
-      
+
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-24">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -175,7 +175,7 @@ const StartupPage = () => {
             <i className="ri-arrow-right-s-line text-xs"></i>
             <span className="text-blue-200">Startup</span>
           </nav>
-          
+
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center">
@@ -220,33 +220,30 @@ const StartupPage = () => {
           <div className="flex gap-1">
             <button
               onClick={() => setActiveTab('programs')}
-              className={`px-6 py-4 font-medium transition-all whitespace-nowrap ${
-                activeTab === 'programs'
-                  ? 'text-blue-600 border-b-2 border-blue-600'
-                  : 'text-gray-600 hover:text-blue-600'
-              }`}
+              className={`px-6 py-4 font-medium transition-all whitespace-nowrap ${activeTab === 'programs'
+                ? 'text-blue-600 border-b-2 border-blue-600'
+                : 'text-gray-600 hover:text-blue-600'
+                }`}
             >
               <i className="ri-apps-line mr-2"></i>
               Programs
             </button>
             <button
               onClick={() => setActiveTab('success')}
-              className={`px-6 py-4 font-medium transition-all whitespace-nowrap ${
-                activeTab === 'success'
-                  ? 'text-blue-600 border-b-2 border-blue-600'
-                  : 'text-gray-600 hover:text-blue-600'
-              }`}
+              className={`px-6 py-4 font-medium transition-all whitespace-nowrap ${activeTab === 'success'
+                ? 'text-blue-600 border-b-2 border-blue-600'
+                : 'text-gray-600 hover:text-blue-600'
+                }`}
             >
               <i className="ri-trophy-line mr-2"></i>
               Success Stories
             </button>
             <button
               onClick={() => setActiveTab('support')}
-              className={`px-6 py-4 font-medium transition-all whitespace-nowrap ${
-                activeTab === 'support'
-                  ? 'text-blue-600 border-b-2 border-blue-600'
-                  : 'text-gray-600 hover:text-blue-600'
-              }`}
+              className={`px-6 py-4 font-medium transition-all whitespace-nowrap ${activeTab === 'support'
+                ? 'text-blue-600 border-b-2 border-blue-600'
+                : 'text-gray-600 hover:text-blue-600'
+                }`}
             >
               <i className="ri-hand-heart-line mr-2"></i>
               Support Services
@@ -298,9 +295,8 @@ const StartupPage = () => {
               {successStories.map((story, index) => (
                 <div
                   key={story.id}
-                  className={`bg-gradient-to-br ${
-                    index % 2 === 0 ? 'from-blue-50 to-indigo-50' : 'from-purple-50 to-pink-50'
-                  } rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300`}
+                  className={`bg-gradient-to-br ${index % 2 === 0 ? 'from-blue-50 to-indigo-50' : 'from-purple-50 to-pink-50'
+                    } rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300`}
                 >
                   <div className="grid md:grid-cols-2 gap-0">
                     <div className={`${index % 2 === 0 ? 'order-1' : 'order-2'}`}>
@@ -368,7 +364,7 @@ const StartupPage = () => {
               <div className="flex flex-wrap gap-4 justify-center">
                 <button onClick={() => window.open('https://admissions.dmifoundations.org/dmi-engineering-college-application-form', '_blank')} className="px-8 py-3 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-colors whitespace-nowrap">
                   <i className="ri-file-text-line mr-2"></i>
-                  Admission 2026-27
+                  Admissions 2026-27
                 </button>
                 <button className="px-8 py-3 bg-blue-700 text-white rounded-lg font-medium hover:bg-blue-800 transition-colors whitespace-nowrap border border-blue-500">
                   <i className="ri-phone-line mr-2"></i>
