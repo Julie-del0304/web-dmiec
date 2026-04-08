@@ -40,7 +40,7 @@ export default function GoverningCouncilPage() {
 
   const members = [
     {
-      name: 'Dr. K. Ramasamy',
+      name: 'Dr.A.Albert Raj',
       position: 'Member - Academic Expert',
       qualification: 'Ph.D., Former Vice Chancellor',
       organization: 'Anna University',
@@ -172,11 +172,11 @@ export default function GoverningCouncilPage() {
                   <img 
                     src={chairman.image}
                     alt={chairman.name}
-                    className="w-full h-auto object-contain rounded-xl shadow-lg bg-white"
+                    className="w full h-auto object-contain rounded-xl shadow-lg bg-white"
                     style={{ aspectRatio: '3/4' }}
-                    onError={(e) => {
-                      e.target.src = 'https://via.placeholder.com/400x500?text=Photo+Not+Available';
-                    }}
+                   onError={(e) => {
+                    e.currentTarget.src = 'https://via.placeholder.com/400x500?text=Photo+Not+Available';
+                   }}
                   />
                 </div>
               </div>

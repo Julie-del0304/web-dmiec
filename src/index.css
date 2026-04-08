@@ -98,3 +98,12 @@ body {
     border-color: #5a168f !important;
   }
 }
+
+/* Force 90% zoom on desktop view and ensure it fits the screen */
+@media screen and (min-width: 1024px) {
+  body {
+    zoom: 0.9;
+    width: 100%;
+    min-height: 100vh;
+  }
+}

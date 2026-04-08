@@ -148,23 +148,23 @@ export default function Admissions() {
             </div>
 
             <div className="bg-gradient-to-br from-navy-700 to-navy-900 rounded-xl shadow-lg p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Important Dates 2025-26</h3>
+              <h3 className="text-2xl font-bold mb-4">Important Dates 2026-27</h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center border-b border-white/20 pb-3">
                   <span className="font-medium">Application Start</span>
-                  <span className="font-bold">May 1, 2025</span>
+                  <span className="font-bold">April 1, 2026</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-white/20 pb-3">
                   <span className="font-medium">Application Deadline</span>
-                  <span className="font-bold">July 15, 2025</span>
+                  <span className="font-bold">June 15, 2026</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-white/20 pb-3">
                   <span className="font-medium">Entrance Test</span>
-                  <span className="font-bold">July 20-25, 2025</span>
+                  <span className="font-bold">June 20-26, 2026</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="font-medium">Classes Begin</span>
-                  <span className="font-bold">August 15, 2025</span>
+                  <span className="font-bold">July 15, 2026</span>
                 </div>
               </div>
             </div>
@@ -194,7 +194,7 @@ export default function Admissions() {
                     </li>
                     <li className="flex items-start">
                       <i className="ri-checkbox-circle-fill text-navy-600 mr-2 mt-0.5"></i>
-                      <span>Age limit: 17-25 years as on December 31, 2025</span>
+                      <span>Age limit: 17-25 years as on December 31, 2026</span>
                     </li>
                   </ul>
                 </div>

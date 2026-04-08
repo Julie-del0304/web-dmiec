@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,10 +9,6 @@ export default function FloatingActionWidget({ onEnquiry }: FloatingActionWidget
   const [open, setOpen] = useState(true);
   const navigate = useNavigate();
 
-  const handleTalkWithUs = () => {
-    const btn = document.querySelector('#vapi-widget-floating-button') as HTMLElement | null;
-    if (btn) btn.click();
-  };
 
   const handleApplyNow = () => {
     navigate('/application');
@@ -25,12 +20,6 @@ export default function FloatingActionWidget({ onEnquiry }: FloatingActionWidget
   };
 
   const actions = [
-    {
-      label: 'Talk with Us',
-      icon: 'ri-customer-service-2-line',
-      color: 'bg-slate-800 hover:bg-slate-900 text-white',
-      onClick: handleTalkWithUs,
-    },
     {
       label: 'Apply Now',
       icon: 'ri-file-add-line',

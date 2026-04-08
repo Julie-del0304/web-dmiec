@@ -209,7 +209,7 @@ export default function ApplicationPage() {
           {/* Header */}
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-navy-900 mb-3">
-              <strong>Application Form</strong>
+              <strong>Application Form 2026-27</strong>
             </h1>
             <p className="text-slate-600 text-base">
               Complete all steps to submit your application to DMI Engineering College
@@ -222,13 +222,12 @@ export default function ApplicationPage() {
               {[1, 2, 3, 4, 5].map((step) => (
                 <div key={step} className="flex items-center flex-1">
                   <div
-                    className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all ${
-                      currentStep === step
-                        ? 'bg-navy-600 text-white scale-110'
-                        : currentStep > step
+                    className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all ${currentStep === step
+                      ? 'bg-navy-600 text-white scale-110'
+                      : currentStep > step
                         ? 'bg-emerald-500 text-white'
                         : 'bg-slate-200 text-slate-500'
-                    }`}
+                      }`}
                   >
                     {currentStep > step ? (
                       <i className="ri-check-line text-xl" />
@@ -238,9 +237,8 @@ export default function ApplicationPage() {
                   </div>
                   {step < 5 && (
                     <div
-                      className={`flex-1 h-1 mx-2 transition-all ${
-                        currentStep > step ? 'bg-emerald-500' : 'bg-slate-200'
-                      }`}
+                      className={`flex-1 h-1 mx-2 transition-all ${currentStep > step ? 'bg-emerald-500' : 'bg-slate-200'
+                        }`}
                     />
                   )}
                 </div>

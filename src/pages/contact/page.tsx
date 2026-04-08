@@ -40,9 +40,9 @@ export default function ContactPage() {
     { icon: 'ri-mail-line', label: 'Email', value: 'dmieckk@gmail.com', color: 'bg-amber-100 text-amber-600' },
     { icon: 'ri-time-line', label: 'Office Hours', value: 'Mon – Sat: 9:00 AM – 4:00 PM\nSunday: Closed', color: 'bg-rose-100 text-rose-600' },
     {
-  icon: 'ri-time-line',
-  label: 'Project Team',
-  value: `Team Lead: Arockia Juliya A.R
+      icon: 'ri-time-line',
+      label: 'Project Team',
+      value: `Team Lead: Arockia Juliya A.R
 Assistant Lead: Siva Marimuthu
 
 Full Stack
@@ -59,8 +59,8 @@ Database:
 Software Testing:
 1. R.Shanmugapriya
 2. Varsha`,
-  color: 'bg-rose-100 text-rose-600'
-}
+      color: 'bg-rose-100 text-rose-600'
+    }
   ];
 
   return (
@@ -85,9 +85,8 @@ Software Testing:
             {contactInfo.map((item) => (
               <div
                 key={item.label}
-                className={`${
-                  item.label === 'Project Team' ? 'md:col-span-2' : ''
-                } bg-white border border-slate-100 rounded-xl p-6 shadow-sm`}
+                className={`${item.label === 'Project Team' ? 'md:col-span-2' : ''
+                  } bg-white border border-slate-100 rounded-xl p-6 shadow-sm`}
               >
                 <div className={`w-12 h-12 flex items-center justify-center rounded-full mx-auto mb-4 ${item.color}`}>
                   <i className={`${item.icon} text-xl`}></i>
@@ -96,11 +95,11 @@ Software Testing:
                 {item.label === 'Project Team' ? (
                   <div className="text-sm leading-5 text-left max-w-xs mx-auto">
                     <p><strong className="text-slate-700">Team Lead:</strong> Arockia Juliya A.R</p>
-                    <p><strong className="text-slate-700">Assistant Lead:</strong> Siva Marimuthu</p>
+                    <p><strong className="text-slate-700">Assistant Lead:</strong> Siva Marimuthu.I</p>
 
                     <p className="mt-2 font-semibold text-slate-700">Full Stack:</p>
                     <ul className="list-disc ml-5 text-slate-500">
-                      <li>Asha</li>
+                      <li>Asha Lidiya</li>
                       <li>Abinsam</li>
                       <li>Tony Blair Ubahara Wencislas</li>
                     </ul>
@@ -113,7 +112,7 @@ Software Testing:
 
                     <p className="mt-2 font-semibold text-slate-700">Software Testing:</p>
                     <ul className="list-disc ml-5 text-slate-500">
-                      <li>Priya</li>
+                      <li>Shanmuga Priya</li>
                       <li>Varsha</li>
                     </ul>
                   </div>

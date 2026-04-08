@@ -95,7 +95,7 @@ export default function InfrastructurePage() {
     'Waiting halls for boys and girls in all departments',
     'Chapel & prayer hall for moments of solace and reflection',
     'Grandeur of the Mother Virgin Auditorium accommodating 1200 students',
-    'Nano auditorium, fully air-conditioned for 300 students',
+    'Nano auditorium, fully air-conditioned for 250 students',
     'Well-equipped laboratories sparking innovation',
     'Three-storey hostel for men',
     'Two-storey hostel for women',
